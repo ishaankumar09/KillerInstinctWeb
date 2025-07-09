@@ -15,16 +15,14 @@ export default function HomePage() {
   const [showDesktopTypewriter, setShowDesktopTypewriter] = useState(false)
 
   useEffect(() => {
-    // Start the first line animation after a short delay
     const timer1 = setTimeout(() => {
       setShowFirstLine(true)
       setShowDesktopTypewriter(true)
     }, 500)
 
-    // Start the second line animation after the first line completes
     const timer2 = setTimeout(() => {
       setShowSecondLine(true)
-    }, 2500) // Adjust timing as needed
+    }, 2500) 
 
     return () => {
       clearTimeout(timer1)
@@ -34,7 +32,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero and About Section - Combined */}
       <div className="relative">
         <div
           className="absolute inset-0"
@@ -45,14 +42,12 @@ export default function HomePage() {
           }}
         />
 
-        {/* Hero Content */}
         <section className="relative min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
           <div className="relative z-10 max-w-7xl text-center">
             <p className="text-white/90 text-xl md:text-2xl lg:text-3xl mb-6 font-sans font-medium">
               Introducing FTC Team 20381
             </p>
             <div className="mb-6">
-              {/* Mobile version - two lines with sequential animation */}
               <div className="block md:hidden">
                 <h1
                   className={`text-white text-6xl font-bold font-sans leading-tight ${showFirstLine ? "typewriter-mobile-first" : "opacity-0"}`}
@@ -66,7 +61,6 @@ export default function HomePage() {
                 </h1>
               </div>
 
-              {/* Desktop version - single line */}
               <h1
                 className={`hidden md:inline-block text-white text-7xl md:text-8xl lg:text-9xl font-bold font-sans leading-tight ${
                   showDesktopTypewriter ? "typewriter typewriter-delay" : "opacity-0"
@@ -91,7 +85,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Sponsors Section */}
         <section className="relative py-8 px-8 md:px-16 lg:px-24">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -102,7 +95,6 @@ export default function HomePage() {
             </div>
             <div className="relative overflow-hidden">
               <div className="flex space-x-20 items-center justify-center sponsor-scroll">
-                {/* First set of logos */}
                 <img
                   src="/images/Hass.png"
                   alt="Gene Haas Foundation"
@@ -119,11 +111,10 @@ export default function HomePage() {
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
-                  src="/images/panasonic.png"
+                  src="/images/Panasonic.png"
                   alt="Panasonic"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
-                {/* Duplicate set for seamless loop */}
                 <img
                   src="/images/Hass.png"
                   alt="Gene Haas Foundation"
@@ -140,7 +131,7 @@ export default function HomePage() {
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
-                  src="/images/panasonic.png"
+                  src="/images/Panasonic.png"
                   alt="Panasonic"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
@@ -149,7 +140,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* About Content */}
+
         <section id="about" className="relative pt-16 pb-20 px-8 md:px-16 lg:px-24">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -239,7 +230,6 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* Achievements Section */}
       <section className="py-20 px-8 md:px-16 lg:px-24 bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
