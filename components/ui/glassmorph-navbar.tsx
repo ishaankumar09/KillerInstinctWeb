@@ -72,34 +72,6 @@ export default function GlassmorphNavbar() {
               >
                 2025
               </Link>
-              <Link
-                href="/seasons/2024"
-                onClick={closeDropdown}
-                className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                2024
-              </Link>
-              <Link
-                href="/seasons/2023"
-                onClick={closeDropdown}
-                className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                2023
-              </Link>
-              <Link
-                href="/seasons/2022"
-                onClick={closeDropdown}
-                className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                2022
-              </Link>
-              <Link
-                href="/seasons/2021"
-                onClick={closeDropdown}
-                className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                2021
-              </Link>
             </div>
           )}
         </div>
