@@ -30,7 +30,7 @@ const programmingMembers = [
   {
     name: "Luca Flood",
     role: "Programming Lead",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/luca.png",
   },
   {
     name: "Adithi Murlidas",
@@ -45,7 +45,7 @@ const programmingMembers = [
   {
     name: "Sean Hang",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/sean.jpg",
   },
   {
     name: "Seth Lin",
@@ -64,7 +64,7 @@ const cadMembers = [
   {
     name: "Gavin Hudson",
     role: "Club President",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/gavin.jpg",
   },
   {
     name: "Caden Weaver",
@@ -97,7 +97,7 @@ const outreachMembers = [
   {
     name: "Ishaan Kumar",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/ishaank.jpg",
   },
   {
     name: "Mingun Cho",
@@ -122,7 +122,7 @@ const outreachMembers = [
   {
     name: "Aiden Long",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/aiden.JPG",
   },
 ]
 
@@ -266,7 +266,7 @@ export default function TeamPage() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold font-sans text-white mb-8">Computer Aided Design</h2>
+              <h2 className="text-3xl font-bold font-sans text-white mb-8">CAD</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {cadMembers.map((member, index) => (
                   <div key={index} className="text-center">
@@ -285,7 +285,7 @@ export default function TeamPage() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold font-sans text-white mb-8">Community Outreach</h2>
+              <h2 className="text-3xl font-bold font-sans text-white mb-8">Outreach</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {outreachMembers.map((member, index) => (
                   <div key={index} className="text-center">
