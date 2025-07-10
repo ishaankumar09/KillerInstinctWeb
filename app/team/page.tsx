@@ -5,7 +5,7 @@ import Autoplay from "embla-carousel-autoplay"
 const teamMembers = [
   {
     name: "Kasra Hoor",
-    role: "Mech Team Lead",
+    role: "Mechanical Lead",
     image: "/images/kasra.jpg",
   },
   {

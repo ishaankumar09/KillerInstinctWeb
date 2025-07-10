@@ -21,7 +21,7 @@ const sponsors = [
   },
   {
     name: "Panasonic",
-    image: "/images/panasonic.png",
+    image: "/images/Panasonic.png",
     website: "https://www.panasonic.com/",
   },
 ]
