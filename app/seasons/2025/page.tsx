@@ -14,9 +14,7 @@ export default function Season2025Page() {
             "radial-gradient(circle 1200px at 50% 20%, rgba(13, 148, 137, 0.15) 0%, rgba(13, 148, 136, 0.2) 20%, rgba(13, 148, 137, 0) 40%, transparent 70%)",
         }}
       />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        {/* Header */}
+      <div className="relative pt-16 z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-cyan-500/20 text-cyan-300 border-cyan-400/30">2024-2025 Season</Badge>
           <h1 className="text-4xl md:text-5xl font-bold font-sans text-white mb-6">FTC Into the Deep</h1>
@@ -28,17 +26,15 @@ export default function Season2025Page() {
 
         <section className="mb-32">
           <h2 className="text-3xl font-bold text-white mb-8 font-sans text-center">Our Championship Team</h2>
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden max-w-5xl mx-auto">
-            <CardContent className="p-0">
-              <div className="aspect-video bg-white/5 flex items-center justify-center">
-                <img
-                  src="/images/team-pic.png"
-                  alt="Team Killer Instinct 2024-2025 Season"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </CardContent>
-          </Card>
+          <div className="max-w-5xl mx-auto">
+            <div className="aspect-video">
+              <img
+                src="/images/teampic.jpg"
+                alt="Team Killer Instinct 2024-2025 Season"
+                className="w-full h-full object-cover rounded-[20px]"
+              />
+            </div>
+          </div>
         </section>
 
         <section className="mb-16">
@@ -109,7 +105,6 @@ export default function Season2025Page() {
                 </p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -122,22 +117,18 @@ export default function Season2025Page() {
                 </p>
               </CardContent>
             </Card>
-
             <div className="row-span-2 flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-6 font-sans">Competition Robot</h3>
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden flex-grow">
-                <CardContent className="p-0 h-full">
-                  <div className="aspect-square bg-white/5 flex items-center justify-center h-full">
-                    <img
-                      src="/placeholder.svg?height=400&width=400"
-                      alt="Competition Robot - Final Design"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex-grow">
+                <div className="aspect-square">
+                  <img
+                    src="/images/robot.jpg"
+                    alt="Competition Robot - Final Design"
+                    className="w-full h-full object-cover rounded-[20px]"
+                  />
+                </div>
+              </div>
             </div>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -149,7 +140,6 @@ export default function Season2025Page() {
                 </p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -176,7 +166,6 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">3-specimen autonomous program</p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Cog className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
@@ -185,7 +174,6 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Dual-string mechanism with tent tensioners</p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Zap className="w-12 h-12 text-green-400 mx-auto mb-4" />
@@ -194,7 +182,6 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Spline navigation system</p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Camera className="w-12 h-12 text-purple-400 mx-auto mb-4" />
@@ -203,7 +190,6 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Auto-alignment claw system</p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Award className="w-12 h-12 text-orange-400 mx-auto mb-4" />
@@ -212,7 +198,6 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Idle hooks for endgame ascent</p>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Cpu className="w-12 h-12 text-blue-400 mx-auto mb-4" />
@@ -244,7 +229,6 @@ export default function Season2025Page() {
                 </ul>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -262,7 +246,6 @@ export default function Season2025Page() {
                 </ul>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -280,7 +263,6 @@ export default function Season2025Page() {
                 </ul>
               </CardContent>
             </Card>
-
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -306,17 +288,15 @@ export default function Season2025Page() {
           <div className="grid lg:grid-cols-2 gap-12 mb-8">
             <div className="flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-6 font-sans">Autonomous Development</h3>
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 overflow-hidden flex-grow">
-                <CardContent className="p-0 h-full">
-                  <div className="aspect-video bg-white/5 flex items-center justify-center">
-                    <img
-                      src="/images/auton.png"
-                      alt="60-Point Autonomous Development"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex-grow">
+                <div className="aspect-video">
+                  <img
+                    src="/images/auton.png"
+                    alt="60-Point Autonomous Development"
+                    className="w-full h-full object-cover rounded-[20px]"
+                  />
+                </div>
+              </div>
             </div>
             <div className="flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-6 font-sans">Computer Vision Pipeline</h3>
@@ -337,7 +317,7 @@ export default function Season2025Page() {
                       correction
                     </p>
                     <p>
-                      <strong className="text-cyan-400">Result:</strong> Reduced driver error, aligned claw in &lt; 1
+                      <strong className="text-cyan-400">Result:</strong> Reduced driver error, aligned claw in {"< 1"}
                       second
                     </p>
                   </div>
@@ -345,7 +325,6 @@ export default function Season2025Page() {
               </Card>
             </div>
           </div>
-
           <div className="grid md:grid-cols-1 gap-8">
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
@@ -381,7 +360,7 @@ export default function Season2025Page() {
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-cyan-400 mb-2">16th</div>
-                  <p className="text-white/80 font-sans">ILT Placement</p>
+                  <p className="text-white/80 font-sans">SoCal Regional Placement</p>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-cyan-400 mb-2">60</div>

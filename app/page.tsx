@@ -22,7 +22,7 @@ export default function HomePage() {
 
     const timer2 = setTimeout(() => {
       setShowSecondLine(true)
-    }, 2500) 
+    }, 2500)
 
     return () => {
       clearTimeout(timer1)
@@ -50,17 +50,20 @@ export default function HomePage() {
             <div className="mb-6">
               <div className="block md:hidden">
                 <h1
-                  className={`text-white text-6xl font-bold font-sans leading-tight ${showFirstLine ? "typewriter-mobile-first" : "opacity-0"}`}
+                  className={`text-white text-6xl font-bold font-sans leading-tight ${
+                    showFirstLine ? "typewriter-mobile-first" : "opacity-0"
+                  }`}
                 >
                   Killer
                 </h1>
                 <h1
-                  className={`text-white text-6xl font-bold font-sans leading-tight ${showSecondLine ? "typewriter-mobile-second" : "opacity-0"}`}
+                  className={`text-white text-6xl font-bold font-sans leading-tight ${
+                    showSecondLine ? "typewriter-mobile-second" : "opacity-0"
+                  }`}
                 >
                   Instinct.
                 </h1>
               </div>
-
               <h1
                 className={`hidden md:inline-block text-white text-7xl md:text-8xl lg:text-9xl font-bold font-sans leading-tight ${
                   showDesktopTypewriter ? "typewriter typewriter-delay" : "opacity-0"
@@ -140,7 +143,6 @@ export default function HomePage() {
           </div>
         </section>
 
-
         <section id="about" className="relative pt-16 pb-20 px-8 md:px-16 lg:px-24">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -155,6 +157,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 font-sans"
+                  asChild
                 >
                   <Link href="/team" className="flex items-center gap-3">
                     View our Team
@@ -180,46 +183,79 @@ export default function HomePage() {
                   <CarouselContent>
                     <CarouselItem>
                       <div className="p-1">
-                        <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                          <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                            <img src="/images/team-pic.png" alt="Team pic" className="w-full h-full object-cover" />
-                          </CardContent>
-                        </Card>
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/team-pic.png"
+                            alt="Team pic"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     </CarouselItem>
                     <CarouselItem>
                       <div className="p-1">
-                        <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                          <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                            <img
-                              src="/images/daniel-pic1.jpg"
-                              alt="Robot in competition"
-                              className="w-full h-full object-cover"
-                            />
-                          </CardContent>
-                        </Card>
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/pic1.jpg"
+                            alt="drive team"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     </CarouselItem>
                     <CarouselItem>
                       <div className="p-1">
-                        <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                          <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                            <img src="/images/drive.png" alt="Award ceremony" className="w-full h-full object-cover" />
-                          </CardContent>
-                        </Card>
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/pic2.jpg"
+                            alt="spike ball"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     </CarouselItem>
                     <CarouselItem>
                       <div className="p-1">
-                        <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                          <CardContent className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg">
-                            <img
-                              src="/images/kasra-pic1.jpg"
-                              alt="Team at competition"
-                              className="w-full h-full object-cover"
-                            />
-                          </CardContent>
-                        </Card>
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/jonas.jpg"
+                            alt="jonas with robot"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/pic3.jpg"
+                            alt="team"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/pic4.jpg"
+                            alt="robot in action"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/kasra-goon.jpg"
+                            alt="kasra gooning"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     </CarouselItem>
                   </CarouselContent>
@@ -353,6 +389,7 @@ export default function HomePage() {
             <Button
               size="lg"
               className="bg-cyan-500 hover:bg-cyan-600 text-white transition-all duration-300 hover:scale-105 font-sans"
+              asChild
             >
               <Link href="/contact" className="flex items-center gap-3">
                 Contact Us
@@ -363,6 +400,7 @@ export default function HomePage() {
               size="lg"
               variant="outline"
               className="border-white/30 text-white backdrop-blur-sm bg-transparent transition-all duration-300 hover:scale-105 hover:border-white/50 font-sans"
+              asChild
             >
               <a
                 target="_blank"

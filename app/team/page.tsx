@@ -176,7 +176,7 @@ export default function TeamPage() {
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
                         <img
-                          src="/images/daniel-pic1.jpg"
+                          src="/images/pic1.jpg"
                           alt="Robot in competition"
                           className="w-full h-full object-cover"
                         />
@@ -184,14 +184,38 @@ export default function TeamPage() {
                     </CarouselItem>
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
-                        <img src="/images/drive.png" alt="Award ceremony" className="w-full h-full object-cover" />
+                        <img 
+                          src="/images/pic2.jpg" 
+                          alt="Award ceremony" 
+                          className="w-full h-full object-cover"
+                         />
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <div className="aspect-video overflow-hidden rounded-lg">
+                          <img
+                            src="/images/jonas.jpg"
+                            alt="jonas with robot"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                     </CarouselItem>
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
                         <img
-                          src="/images/kasra-pic1.jpg"
+                          src="/images/pic3.jpg"
                           alt="Team at competition"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="aspect-video overflow-hidden rounded-lg">
+                        <img
+                          src="/images/kasra-goon.jpg"
+                          alt="kasra goon"
                           className="w-full h-full object-cover"
                         />
                       </div>
