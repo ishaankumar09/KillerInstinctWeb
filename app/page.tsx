@@ -196,7 +196,7 @@ export default function HomePage() {
                       <div className="p-1">
                         <div className="aspect-video overflow-hidden rounded-lg">
                           <img
-                            src="/images/pic1.jpg"
+                            src="/images/pic1.JPG"
                             alt="drive team"
                             className="w-full h-full object-cover"
                           />
@@ -207,7 +207,7 @@ export default function HomePage() {
                       <div className="p-1">
                         <div className="aspect-video overflow-hidden rounded-lg">
                           <img
-                            src="/images/pic2.jpg"
+                            src="/images/pic2.JPG"
                             alt="spike ball"
                             className="w-full h-full object-cover"
                           />
@@ -229,7 +229,7 @@ export default function HomePage() {
                       <div className="p-1">
                         <div className="aspect-video overflow-hidden rounded-lg">
                           <img
-                            src="/images/pic3.jpg"
+                            src="/images/pic3.JPG"
                             alt="team"
                             className="w-full h-full object-cover"
                           />
@@ -240,7 +240,7 @@ export default function HomePage() {
                       <div className="p-1">
                         <div className="aspect-video overflow-hidden rounded-lg">
                           <img
-                            src="/images/pic4.jpg"
+                            src="/images/pic4.JPG"
                             alt="robot in action"
                             className="w-full h-full object-cover"
                           />
@@ -251,7 +251,7 @@ export default function HomePage() {
                       <div className="p-1">
                         <div className="aspect-video overflow-hidden rounded-lg">
                           <img
-                            src="/images/kasra-goon.jpg"
+                            src="/images/kasra-goon.JPG"
                             alt="kasra gooning"
                             className="w-full h-full object-cover"
                           />

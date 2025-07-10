@@ -176,7 +176,7 @@ export default function TeamPage() {
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
                         <img
-                          src="/images/pic1.jpg"
+                          src="/images/pic1.JPG"
                           alt="Robot in competition"
                           className="w-full h-full object-cover"
                         />
@@ -185,7 +185,7 @@ export default function TeamPage() {
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
                         <img 
-                          src="/images/pic2.jpg" 
+                          src="/images/pic2.JPG" 
                           alt="Award ceremony" 
                           className="w-full h-full object-cover"
                          />
@@ -205,7 +205,7 @@ export default function TeamPage() {
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
                         <img
-                          src="/images/pic3.jpg"
+                          src="/images/pic3.JPG"
                           alt="Team at competition"
                           className="w-full h-full object-cover"
                         />
@@ -214,7 +214,7 @@ export default function TeamPage() {
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
                         <img
-                          src="/images/kasra-goon.jpg"
+                          src="/images/kasra-goon.JPG"
                           alt="kasra goon"
                           className="w-full h-full object-cover"
                         />
