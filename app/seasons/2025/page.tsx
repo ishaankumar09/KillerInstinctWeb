@@ -29,7 +29,7 @@ export default function Season2025Page() {
           <div className="max-w-5xl mx-auto">
             <div className="aspect-video">
               <img
-                src="/images/teampic.jpg"
+                src="/images/teampic.JPG"
                 alt="Team Killer Instinct 2024-2025 Season"
                 className="w-full h-full object-cover rounded-[20px]"
               />
