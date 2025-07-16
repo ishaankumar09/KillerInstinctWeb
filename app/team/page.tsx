@@ -67,14 +67,14 @@ const cadMembers = [
     image: "/images/gavin.jpg",
   },
   {
-    name: "Caden Weaver",
-    role: "",
-    image: "/placeholder.svg?height=200&width=200",
-  },
-  {
     name: "Harpreet Gill",
     role: "Club Secretary",
     image: "/placeholder.svg?height=200&width=200",
+  },
+  {
+    name: "Caden Weaver",
+    role: "",
+    image: "/images/caden.png",
   },
   {
     name: "Jules Picache",
@@ -112,12 +112,12 @@ const outreachMembers = [
   {
     name: "Gabby Aguilar",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/gabby.jpg",
   },
   {
     name: "Trish Nguyen",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/trish.png",
   },
   {
     name: "Aiden Long",
