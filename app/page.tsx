@@ -185,7 +185,7 @@ export default function HomePage() {
                       <div className="p-1">
                         <div className="aspect-video overflow-hidden rounded-lg">
                           <img
-                            src="/images/team-pic.png"
+                            src="/images/teampic.JPG"
                             alt="Team pic"
                             className="w-full h-full object-cover"
                           />

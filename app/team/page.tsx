@@ -11,7 +11,7 @@ const teamMembers = [
   {
     name: "Cain Guevera",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/cain.jpg",
   },
   {
     name: "James Vu",
@@ -92,7 +92,7 @@ const outreachMembers = [
   {
     name: "Chloe Asidera",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/chloe.jpg",
   },
   {
     name: "Ishaan Kumar",
@@ -107,10 +107,10 @@ const outreachMembers = [
   {
     name: "Ryan Nian",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/ryan.png",
   },
   {
-    name: "Gabby Aguilar",
+    name: "Gabriella Aguilar",
     role: "",
     image: "/images/gabby.jpg",
   },
@@ -170,7 +170,7 @@ export default function TeamPage() {
                   <CarouselContent>
                     <CarouselItem>
                       <div className="aspect-video overflow-hidden rounded-lg">
-                        <img src="/images/team-pic.png" alt="Team pic" className="w-full h-full object-cover" />
+                        <img src="/images/teampic.JPG" alt="Team pic" className="w-full h-full object-cover" />
                       </div>
                     </CarouselItem>
                     <CarouselItem>

@@ -29,7 +29,7 @@ export default function Season2025Page() {
           <div className="max-w-5xl mx-auto">
             <div className="aspect-video">
               <img
-                src="/images/teampic.JPG"
+                src="/images/team-pic.png"
                 alt="Team Killer Instinct 2024-2025 Season"
                 className="w-full h-full object-cover rounded-[20px]"
               />
@@ -59,7 +59,7 @@ export default function Season2025Page() {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Climb rungs for endgame points (up to 3 levels high)
+                      Climb rungs for endgame points
                     </li>
                   </ul>
                 </div>
@@ -68,11 +68,11 @@ export default function Season2025Page() {
                   <ul className="space-y-3 text-white/80 font-sans">
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Submersible structure with low, mid, and high clip points
+                      Submersible structure with low and high clip points
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Specimens in three team colors: red, blue, yellow
+                      Specimens in three team colors: red, blue, yellow (neutral)
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
