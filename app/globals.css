@@ -94,7 +94,106 @@
   }
 }
 
-/* Custom animations and keyframes */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #06b6d4;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid #06b6d4;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+  animation: typewriter 3s steps(40, end), blinkTextCursor 0.75s step-end infinite;
+}
+
+@keyframes typewriter-mobile {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink-cursor {
+  0%, 100% {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: #06b6d4;
+  }
+}
+
+@keyframes hide-cursor {
+  to {
+    border-right: none;
+  }
+}
+
+.typewriter-mobile-first {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #06b6d4;
+  width: 0;
+  max-width: 6ch; 
+  margin: 0 auto;
+  animation:
+    typewriter-mobile 1.8s steps(20, end) forwards,
+    hide-cursor 0s forwards 1.8s;
+}
+
+.typewriter-mobile-second {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #06b6d4; 
+  width: 0;
+  max-width: 8ch;
+  margin: 0 auto;
+  animation:
+    typewriter-mobile 1.8s steps(20, end) 1.8s forwards,
+    blink-cursor 0.75s step-end infinite 3.5s;
+}
+
+
+@keyframes blink-cursor {
+  0%, 100% {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: #06b6d4;
+  }
+}
+
+@keyframes hide-cursor {
+  to {
+    border-right: none;
+  }
+}
+
+@keyframes typewriter-mobile {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -109,89 +208,22 @@
   width: calc(200% + 5rem);
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
+@media (max-width: 640px) {
+  .sponsor-scroll {
+    animation-duration: 20s;
+    width: calc(200% + 1rem);
   }
 }
 
-@keyframes blink {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #06b6d4;
-  }
-}
-
-.typewriter {
-  overflow: hidden;
-  border-right: 3px solid #06b6d4;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
-}
-
-.typewriter-delay {
-  animation-delay: 0.5s;
-  animation-fill-mode: both;
-}
-
-/* Mobile typewriter animations */
-.typewriter-mobile-first {
-  overflow: hidden;
-  border-right: 3px solid #06b6d4;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typewriter-mobile-first 2s steps(6, end), blink 0.75s step-end infinite, remove-border 0s 2s forwards;
-  animation-delay: 0s;
-  animation-fill-mode: both;
-}
-
-.typewriter-mobile-second {
-  overflow: hidden;
-  border-right: 3px solid #06b6d4;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typewriter-mobile-second 2s steps(9, end), blink 0.75s step-end infinite;
-  animation-delay: 0s;
-  animation-fill-mode: both;
-}
-
-@keyframes typewriter-mobile-first {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typewriter-mobile-second {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes remove-border {
-  to {
-    border-right: none;
-  }
-}
-
-/* Additional smooth scrolling for anchor links */
-a[href^="#"] {
-  scroll-behavior: smooth;
-}
-
-/* Pause animation on hover for better UX */
 .sponsor-scroll:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter,
+  .typewriter-mobile-first,
+  .typewriter-mobile-second,
+  .sponsor-scroll {
+    animation: none !important;
+  }
 }

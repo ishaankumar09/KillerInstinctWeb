@@ -16,7 +16,7 @@ const teamMembers = [
   {
     name: "James Vu",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/james.jpg",
   },
   {
     name: "Arsh Gandhi",
