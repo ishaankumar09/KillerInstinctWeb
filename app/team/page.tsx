@@ -21,7 +21,7 @@ const teamMembers = [
   {
     name: "Arsh Gandhi",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/arsh.jpg",
   },
 ]
 
@@ -55,7 +55,7 @@ const programmingMembers = [
   {
     name: "Aarya Nigam",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/aarya.jpg",
   },
 ]
 
@@ -69,7 +69,7 @@ const cadMembers = [
   {
     name: "Harpreet Gill",
     role: "Club Secretary",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/harpreet.jpg",
   },
   {
     name: "Caden Weaver",

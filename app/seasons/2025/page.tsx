@@ -4,6 +4,40 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Trophy, Target, Cog, Zap, Camera, Cpu, Calendar, Award } from "lucide-react"
 
+
+const alumni = [
+  {
+    name: "Jonas Tieu",
+    role: "Club President",
+    image: "/images/jonas1.png",
+  },
+  {
+    name: "Advaith Nair",
+    role: "Club Vice President",
+    image: "/images/aadi.png",
+  },
+  {
+    name: "Pranav Bijith",
+    role: "Software Lead",
+    image: "/images/pranav.png",
+  },
+  {
+    name: "Josh Rodriguez",
+    role: "Outreach Lead",
+    image: "/images/josh.png",
+  },
+  {
+    name: "Madison Lo",
+    role: "",
+    image: "/images/madison.JPG",
+  },
+  {
+    name: "Muhaddas Sadiqain",
+    role: "",
+    image: "/placeholder.svg?height=200&width=200",
+  }
+]
+
 export default function Season2025Page() {
   return (
     <div className="min-h-screen bg-black pt-24 pb-16">
@@ -375,8 +409,28 @@ export default function Season2025Page() {
               </div>
             </CardContent>
           </Card>
+          <div>
+              <h2 className="text-3xl font-bold font-sans text-white mb-8 pt-8">Important Alumni</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                {alumni.map((member, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-full h-48 mb-4 overflow-hidden rounded-lg bg-white/20 transition-all duration-300 hover:scale-105">
+                      <img
+                        src={member.image || "/placeholder.svg"}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-white font-sans mb-1">{member.name}</h3>
+                    {member.role && <p className="text-sm text-cyan-400 font-sans">{member.role}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
         </section>
       </div>
     </div>
+
+
   )
 }
