@@ -410,7 +410,7 @@ export default function Season2025Page() {
             </CardContent>
           </Card>
           <div>
-              <h2 className="text-3xl font-bold font-sans text-white mb-8 pt-8">Important Alumni</h2>
+              <h2 className="text-3xl font-bold font-sans text-white mb-8 pt-8">Alumni</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {alumni.map((member, index) => (
                   <div key={index} className="text-center">

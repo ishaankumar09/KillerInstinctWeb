@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Killer Instict",
+  title: "FTC Team 20381 ┃ Killer Instict A",
   description: "Killer Instinct FTC Team Page",
 }
 

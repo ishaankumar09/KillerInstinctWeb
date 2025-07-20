@@ -35,7 +35,7 @@ const programmingMembers = [
   {
     name: "Adithi Murlidas",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/adithi.jpg",
   },
   {
     name: "Nathan Widman",
