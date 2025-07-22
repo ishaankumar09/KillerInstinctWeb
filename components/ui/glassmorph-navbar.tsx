@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { ChevronDown, Linkedin, Instagram } from "lucide-react"
+import { ChevronDown, Linkedin, Instagram, Github} from "lucide-react"
 
 export default function GlassmorphNavbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -139,6 +139,15 @@ export default function GlassmorphNavbar() {
             >
               <Instagram className="w-5 h-5" />
             </a>
+            <a
+              href="https://github.com/ishaankumar09/KillerInstinctWeb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>
@@ -240,6 +249,15 @@ export default function GlassmorphNavbar() {
                   aria-label="Instagram"
                 >
                   <Instagram className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://github.com/ishaankumar09/KillerInstinctWeb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-6 h-6" />'
                 </a>
               </div>
             </div>
