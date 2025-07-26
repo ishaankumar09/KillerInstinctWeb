@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Trophy, Target, Cog, Zap, Camera, Cpu, Calendar, Award } from "lucide-react"
 
-
 const alumni = [
   {
     name: "Jonas Tieu",
@@ -34,8 +33,8 @@ const alumni = [
   {
     name: "Muhaddas Sadiqain",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
-  }
+    image: "/images/Muhaddas.png",
+  },
 ]
 
 export default function Season2025Page() {
@@ -125,7 +124,78 @@ export default function Season2025Page() {
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 font-sans">Season Goals</h2>
-          <div className="grid grid-cols-3 gap-6">
+
+          {/* Mobile Layout */}
+          <div className="lg:hidden">
+            {/* Robot Image First on Mobile */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-white mb-6 font-sans text-center">Competition Robot</h3>
+              <div className="aspect-square max-w-md mx-auto">
+                <img
+                  src="/images/robot.jpg"
+                  alt="Competition Robot - Final Design"
+                  className="w-full h-full object-cover rounded-[20px]"
+                />
+              </div>
+            </div>
+
+            {/* Goal Cards in Mobile Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Target className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-lg font-bold text-white font-sans">Improve Knowledge Transfer</h3>
+                  </div>
+                  <p className="text-white/80 font-sans">
+                    Encourage multi-member collaboration on core subsystems and reduce dependency on individual
+                    contributors.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Camera className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-lg font-bold text-white font-sans">Utilize Odometry & Computer Vision</h3>
+                  </div>
+                  <p className="text-white/80 font-sans">
+                    Move beyond encoder-only navigation by integrating RoadRunner and OpenCV for vision-assisted
+                    autonomous targeting.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Cpu className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-lg font-bold text-white font-sans">Strengthen Autonomous Strategy</h3>
+                  </div>
+                  <p className="text-white/80 font-sans">
+                    Create a consistent multi-specimen autonomous program reaching 60+ point thresholds.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Cog className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-lg font-bold text-white font-sans">Maximize Lift Capability</h3>
+                  </div>
+                  <p className="text-white/80 font-sans">
+                    Build a strong, stable lift system capable of reaching high baskets and supporting full 3rd-level
+                    ascent.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden lg:grid grid-cols-3 gap-6">
             {/* Top Row - Two Goals */}
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
@@ -139,6 +209,7 @@ export default function Season2025Page() {
                 </p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -151,6 +222,7 @@ export default function Season2025Page() {
                 </p>
               </CardContent>
             </Card>
+
             <div className="row-span-2 flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-6 font-sans">Competition Robot</h3>
               <div className="flex-grow">
@@ -163,6 +235,7 @@ export default function Season2025Page() {
                 </div>
               </div>
             </div>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -174,6 +247,7 @@ export default function Season2025Page() {
                 </p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -200,6 +274,7 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">3-specimen autonomous program</p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Cog className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
@@ -208,6 +283,7 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Dual-string mechanism with tent tensioners</p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Zap className="w-12 h-12 text-green-400 mx-auto mb-4" />
@@ -216,6 +292,7 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Spline navigation system</p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Camera className="w-12 h-12 text-purple-400 mx-auto mb-4" />
@@ -224,6 +301,7 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Auto-alignment claw system</p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Award className="w-12 h-12 text-orange-400 mx-auto mb-4" />
@@ -232,6 +310,7 @@ export default function Season2025Page() {
                 <p className="text-white/70 font-sans text-sm">Idle hooks for endgame ascent</p>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6">
                 <Cpu className="w-12 h-12 text-blue-400 mx-auto mb-4" />
@@ -263,6 +342,7 @@ export default function Season2025Page() {
                 </ul>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -280,6 +360,7 @@ export default function Season2025Page() {
                 </ul>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -297,6 +378,7 @@ export default function Season2025Page() {
                 </ul>
               </CardContent>
             </Card>
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -410,27 +492,25 @@ export default function Season2025Page() {
             </CardContent>
           </Card>
           <div>
-              <h2 className="text-3xl font-bold font-sans text-white mb-8 pt-8">Alumni</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                {alumni.map((member, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-full h-48 mb-4 overflow-hidden rounded-lg bg-white/20 transition-all duration-300 hover:scale-105">
-                      <img
-                        src={member.image || "/placeholder.svg"}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold text-white font-sans mb-1">{member.name}</h3>
-                    {member.role && <p className="text-sm text-cyan-400 font-sans">{member.role}</p>}
+            <h2 className="text-3xl font-bold font-sans text-white mb-8 pt-8">Alumni</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {alumni.map((member, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-full h-48 mb-4 overflow-hidden rounded-lg bg-white/20 transition-all duration-300 hover:scale-105">
+                    <img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-lg font-bold text-white font-sans mb-1">{member.name}</h3>
+                  {member.role && <p className="text-sm text-cyan-400 font-sans">{member.role}</p>}
+                </div>
+              ))}
             </div>
+          </div>
         </section>
       </div>
     </div>
-
-
   )
 }

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "FTC Team 20381 ┃ Killer Instinct A",
-  description: "Killer Instinct FTC Team Page",
+  description: "Killer Instinct A FTC Team Page",
 }
 
 export default function RootLayout({

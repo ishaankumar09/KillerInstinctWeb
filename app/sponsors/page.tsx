@@ -24,6 +24,16 @@ const sponsors = [
     image: "/images/Panasonic.png",
     website: "https://www.panasonic.com/",
   },
+  {
+    name: "PCBWay",
+    image: "/images/pcbway.png",
+    website: "https://www.pcbway.com/",
+  },
+  {
+    name: "EDM Services",
+    image: "/images/edm.png",
+    website: "https://edmsvc.com/",
+  },
 ]
 
 export default function SponsorsPage() {
