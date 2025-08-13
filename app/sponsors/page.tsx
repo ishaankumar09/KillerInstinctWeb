@@ -65,7 +65,7 @@ export default function SponsorsPage() {
 
       <div className="relative z-10 px-8 md:px-16 lg:px-24 py-16">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 pl-8">
             <h1 className="text-5xl md:text-6xl font-bold font-sans text-white mb-6">Our Sponsors</h1>
             <p className="text-xl text-white/80 font-sans max-w-3xl mx-auto">
               We are grateful for the support of these incredible organizations who believe in STEM education and the
@@ -119,7 +119,7 @@ export default function SponsorsPage() {
                 <img
                   src="/images/expenses.png"
                   alt="Team Expenses Breakdown"
-                  className="w-full h-auto rounded-lg shadow-lg"
+                  className="w-1920 h-auto rounded-lg shadow-lg"
                 />
               </div>
             </div>

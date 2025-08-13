@@ -129,6 +129,16 @@ export default function HomePage() {
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
+                  src="/images/polymaker.png"
+                  alt="Polymaker"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/elks.png"
+                  alt="Elks Lodge"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
                   src="/images/Hass.png"
                   alt="Gene Haas Foundation"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
@@ -156,6 +166,16 @@ export default function HomePage() {
                 <img
                   src="/images/edm.png"
                   alt="EDM Services"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/polymaker.png"
+                  alt="Polymaker"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/elks.png"
+                  alt="Elks Lodge"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
               </div>
