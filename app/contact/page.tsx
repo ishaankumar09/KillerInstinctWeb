@@ -96,10 +96,10 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-2xl font-bold text-white font-sans mb-2">Phone Number</h3>
                   <a
-                    href="tel:+8188775066"
+                    href="tel:+18188775066"
                     className="text-xl text-cyan-400 font-sans hover:text-cyan-300 transition-colors duration-200"
                   >
-                    +818 877-5066
+                    +1 818 877-5066
                   </a>
                 </div>
                 <div>
