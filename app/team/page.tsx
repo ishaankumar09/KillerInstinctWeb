@@ -79,7 +79,7 @@ const cadMembers = [
   {
     name: "Jules Picache",
     role: "",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/images/jules.jpg",
   },
 ]
 

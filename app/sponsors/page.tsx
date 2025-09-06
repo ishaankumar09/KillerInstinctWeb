@@ -40,7 +40,7 @@ const sponsors = [
     website: "https://polymaker.com/",
   },
   {
-    name: "Elks Lodge",
+    name: "Simi Valley Elks Lodge",
     image: "/images/elks.png",
     website: "https://simivalleyelks.com/",
   },

@@ -368,8 +368,8 @@ export default function HomePage() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 font-sans">This Season's Challenge</h3>
               <p className="text-white/80 mb-6 font-sans">
-                Our team is working hard to design and build a robot capable of completing complex tasks in this year's
-                game. We're focusing on precision, reliability, and innovative solutions to give us a competitive edge.
+                Our team is working hard to design and build a robot for this years FTC challenge "DECODE". 
+                DECODE is centered around collecting artifacts and scoring them into team goals using various subsytems incorporated into our innovative design.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
@@ -386,30 +386,30 @@ export default function HomePage() {
               <h4 className="text-xl font-bold text-white mb-4 font-sans">Upcoming Events</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">League Meet #1</span>
+                  <span className="text-white/90 font-sans">Meet 0 @ Ojai Valley School </span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Dec 15
+                    Oct 18
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">League Meet #2</span>
+                  <span className="text-white/90 font-sans">Meet 1 @ Ojai Valley School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Jan 12
+                    Nov 1
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">Regional Tournament</span>
+                  <span className="text-white/90 font-sans">Meet 2 @ Ojai Valley School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Feb 23
+                    Nov 13
                   </Badge>
                 </div>
               </div>
