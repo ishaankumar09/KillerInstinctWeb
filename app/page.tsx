@@ -104,8 +104,8 @@ export default function HomePage() {
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
-                  src="/images/Navy.png"
-                  alt="U.S. Navy"
+                  src="/images/army.png"
+                  alt="U.S. Army"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
@@ -136,6 +136,16 @@ export default function HomePage() {
                 <img
                   src="/images/elks.png"
                   alt="Elks Lodge"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/tieche.png"
+                  alt="Tieche Engineered Systems"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/simi-police.png"
+                  alt="SVPF"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
@@ -144,8 +154,8 @@ export default function HomePage() {
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
-                  src="/images/Navy.png"
-                  alt="U.S. Navy"
+                  src="/images/army.png"
+                  alt="U.S. Army"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
@@ -176,6 +186,16 @@ export default function HomePage() {
                 <img
                   src="/images/elks.png"
                   alt="Elks Lodge"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/tieche.png"
+                  alt="Tieche Engineered Systems"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
+                  src="/images/simi-police.png"
+                  alt="SVPF"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
               </div>

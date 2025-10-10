@@ -133,7 +133,7 @@ export default function TeamPage() {
         className="absolute inset-0 z-0"
         style={{
           background:
-            "radial-gradient(circle 1600px at 50% 50%, rgba(13, 148, 137, 0.15) 0%, rgba(13, 148, 136, 0.2) 20%, rgba(13, 148, 137, 0) 40%, transparent 70%)",
+            "radial-gradient(circle 1600px at 80% 15%, rgba(13, 148, 137, 0.15) 0%, rgba(13, 148, 136, 0.2) 20%, rgba(13, 148, 137, 0) 40%, transparent 70%)",
           minHeight: "100vh",
         }}
       />

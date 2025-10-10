@@ -3,158 +3,219 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { ChevronDown, Linkedin, Instagram, Github} from "lucide-react"
+import { ChevronDown, Linkedin, Instagram, Github } from "lucide-react"
 
 export default function GlassmorphNavbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  // Dropdown state
+  const [isSeasonsOpen, setIsSeasonsOpen] = useState(false)
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isMobilePastSeasonsOpen, setIsMobilePastSeasonsOpen] = useState(false)
 
-  // Close dropdown when clicking outside
+  // Refs for click-outside detection
+  const seasonsRef = useRef<HTMLDivElement>(null)
+  const resourcesRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false)
+      if (seasonsRef.current && !seasonsRef.current.contains(event.target as Node)) {
+        setIsSeasonsOpen(false)
       }
-      // Only close mobile menu when clicking outside the navbar entirely
+      if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
+        setIsResourcesOpen(false)
+      }
+
       const navbar = document.querySelector("nav")
       if (navbar && !navbar.contains(event.target as Node)) {
         setIsMobileMenuOpen(false)
-        setIsMobilePastSeasonsOpen(false)
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen)
+  // Navigation items configuration
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Team", href: "/team" },
+    {
+      label: "Seasons",
+      dropdown: true,
+      items: [{ label: "2025", href: "/seasons/2025" }],
+    },
+    {
+      label: "Resources",
+      dropdown: true,
+      items: [
+        { label: "Website Building", href: "/resources/website-building" },
+        { label: "Portfolio Building", href: "/resources/portfolio-building" },
+        { label: "Past Portfolios", href: "/resources/portfolios" },
+      ],
+    },
+    { label: "Sponsors", href: "/sponsors" },
+    { label: "Contact", href: "/contact" },
+  ]
+
+  const socialLinks = [
+    { icon: Linkedin, href: "https://www.linkedin.com/company/20381-killer-instinct", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/sshsfirstrobotics", label: "Instagram" },
+    { icon: Github, href: "https://github.com/ishaankumar09/KillerInstinctWeb", label: "GitHub" },
+  ]
+
+  // Dropdown toggle handlers
+  const toggleDropdown = (dropdown: "seasons" | "resources") => {
+    if (dropdown === "seasons") {
+      setIsSeasonsOpen(!isSeasonsOpen)
+      setIsResourcesOpen(false)
+    } else {
+      setIsResourcesOpen(!isResourcesOpen)
+      setIsSeasonsOpen(false)
+    }
   }
 
-  const closeDropdown = () => {
-    setIsDropdownOpen(false)
-  }
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
-  const closeMobileMenu = () => {
+  const closeAllDropdowns = () => {
+    setIsSeasonsOpen(false)
+    setIsResourcesOpen(false)
     setIsMobileMenuOpen(false)
-    setIsMobilePastSeasonsOpen(false)
+  }
+
+  // Render dropdown items
+  const renderDropdown = (items: any[], closeHandler: () => void, width = "w-32") => (
+    <div
+      className={`absolute top-full mt-2 right-0 ${width} bg-black/80 backdrop-blur-md border border-white/20 rounded-lg shadow-lg overflow-hidden`}
+    >
+      {items.map((item, index) => (
+        <Link
+          key={index}
+          href={item.href}
+          onClick={closeHandler}
+          className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium text-sm"
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
+  )
+
+  // Render navigation link or dropdown
+  const renderNavItem = (item: any, isMobile = false) => {
+    if (item.dropdown) {
+      const isOpen = item.label === "Seasons" ? isSeasonsOpen : isResourcesOpen
+      const ref = item.label === "Seasons" ? seasonsRef : resourcesRef
+      const toggle = () => toggleDropdown(item.label === "Seasons" ? "seasons" : "resources")
+
+      if (isMobile) {
+        return (
+          <div key={item.label} className="relative">
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                toggle()
+              }}
+              className="w-full flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
+            >
+              {item.label}
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+            </button>
+            {isOpen && (
+              <div className="bg-white/5 border-t border-white/10">
+                {item.items.map((subItem: any, index: number) => (
+                  <Link
+                    key={index}
+                    href={subItem.href}
+                    onClick={closeAllDropdowns}
+                    className="block px-8 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium text-sm"
+                  >
+                    {subItem.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      }
+
+      return (
+        <div key={item.label} className="relative" ref={ref}>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              toggle()
+            }}
+            className="flex items-center gap-1 text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium text-sm"
+          >
+            {item.label}
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+          </button>
+          {isOpen &&
+            renderDropdown(
+              item.items,
+              () => (item.label === "Seasons" ? setIsSeasonsOpen(false) : setIsResourcesOpen(false)),
+              item.label === "Resources" ? "w-44" : "w-32",
+            )}
+        </div>
+      )
+    }
+
+    if (isMobile) {
+      return (
+        <Link
+          key={item.label}
+          href={item.href}
+          onClick={closeAllDropdowns}
+          className="px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
+        >
+          {item.label}
+        </Link>
+      )
+    }
+
+    return (
+      <Link
+        key={item.label}
+        href={item.href}
+        className="text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium text-sm"
+      >
+        {item.label}
+      </Link>
+    )
   }
 
   return (
     <nav className="fixed left-1/2 top-0 z-50 mt-7 px-5 flex h-16 w-11/12 max-w-7xl -translate-x-1/2 items-center justify-between rounded-full bg-background/10 backdrop-blur-md">
-      <div className="flex items-center gap-2">
-        <Link href="/">
-          <Image src="/images/logo.png" alt="logo" width={48} height={48} />
-        </Link>
+      {/* Logo and Title */}
+      <Link href="/" className="flex items-center gap-2">
+        <Image src="/images/logo.png" alt="logo" width={48} height={48} />
         <h1 className="text-2xl font-bold font-sans text-white">Killer Instinct</h1>
-      </div>
+      </Link>
 
+      {/* Desktop Navigation */}
       <div className="hidden md:flex items-center pr-4">
-        {/* Main navigation links with original spacing */}
-        <div className="flex items-center gap-6">
-          <Link
-            href="/"
-            onClick={() => window.scrollTo(0, 0)}
-            className="text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium"
-          >
-            Home
-          </Link>
-          <Link
-            href="/team"
-            className="text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium"
-          >
-            Team
-          </Link>
+        {/* Main Navigation Links */}
+        <div className="flex items-center gap-4">{navItems.map((item) => renderNavItem(item))}</div>
 
-          {/* Past Seasons Dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                toggleDropdown()
-              }}
-              className="flex items-center gap-1 text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium"
-            >
-              Past Seasons
-              <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-
-            {isDropdownOpen && (
-              <div className="absolute top-full mt-2 right-0 w-32 bg-black/80 backdrop-blur-md border border-white/20 rounded-lg shadow-lg overflow-hidden">
-                <Link
-                  href="/seasons/2025"
-                  onClick={closeDropdown}
-                  className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-                >
-                  2025
-                </Link>
-              </div>
-            )}
-          </div>
-
-          <Link
-            href="/sponsors"
-            className="text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium"
-          >
-            Sponsors
-          </Link>
-        </div>
-
-        {/* Contact and Social Media Icons grouped together */}
-        <div className="flex items-center gap-2 ml-6">
-          <Link
-            href="/contact"
-            className="text-white/90 hover:text-white transition-colors duration-200 font-sans font-medium"
-          >
-            Contact
-          </Link>
-
-          {/* Social Media Icons */}
-          <div className="flex items-center gap-3 ml-2 pl-3 border-l border-white/20">
+        {/* Social Media Icons */}
+        <div className="flex items-center gap-2.5 ml-4 pl-2.5 border-l border-white/20">
+          {socialLinks.map((social) => (
             <a
-              href="https://www.linkedin.com/company/20381-killer-instinct"
+              key={social.label}
+              href={social.href}
               target="_blank"
               rel="noopener noreferrer"
               className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-              aria-label="LinkedIn"
+              aria-label={social.label}
             >
-              <Linkedin className="w-5 h-5" />
+              <social.icon className="w-4.5 h-4.5" />
             </a>
-            <a
-              href="https://www.instagram.com/sshsfirstrobotics"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://github.com/ishaankumar09/KillerInstinctWeb"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-          </div>
+          ))}
         </div>
       </div>
 
+      {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button
-          onClick={toggleMobileMenu}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="text-white/90 hover:text-white transition-colors duration-200"
           aria-label="Toggle mobile menu"
         >
@@ -173,92 +234,23 @@ export default function GlassmorphNavbar() {
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-lg overflow-hidden">
             <div className="flex flex-col py-2">
-              <Link
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                Home
-              </Link>
-              <Link
-                href="/team"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                Team
-              </Link>
-              <div className="relative">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    setIsMobilePastSeasonsOpen(!isMobilePastSeasonsOpen)
-                  }}
-                  className="w-full flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-                >
-                  Past Seasons
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${isMobilePastSeasonsOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {isMobilePastSeasonsOpen && (
-                  <div className="bg-white/5 border-t border-white/10">
-                    <Link
-                      href="/seasons/2025"
-                      onClick={() => {
-                        setIsMobileMenuOpen(false)
-                        setIsMobilePastSeasonsOpen(false)
-                      }}
-                      className="block px-8 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium text-sm"
-                    >
-                      2025
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <Link
-                href="/sponsors"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                Sponsors
-              </Link>
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
-              >
-                Contact
-              </Link>
+              {/* Mobile Navigation Items */}
+              {navItems.map((item) => renderNavItem(item, true))}
 
               {/* Mobile Social Icons */}
               <div className="flex items-center justify-center gap-6 px-4 py-3 border-t border-white/20 mt-2">
-                <a
-                  href="https://www.linkedin.com/company/20381-killer-instinct"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-6 h-6" />
-                </a>
-                <a
-                  href="https://www.instagram.com/sshsfirstrobotics"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-6 h-6" />
-                </a>
-                <a
-                  href="https://github.com/ishaankumar09/KillerInstinctWeb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-6 h-6" />'
-                </a>
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-6 h-6" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>

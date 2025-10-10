@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
+import { imageConfigDefault } from "next/dist/shared/lib/image-config"
 
 const sponsors = [
   {
@@ -10,9 +11,9 @@ const sponsors = [
     website: "https://www.ghaasfoundation.org/",
   },
   {
-    name: "U.S. Navy",
-    image: "/images/Navy.png",
-    website: "https://www.navy.mil/",
+    name: "U.S. Army",
+    image: "/images/army.png",
+    website: "https://www.army.mil/",
   },
   {
     name: "Space Vector",
@@ -44,6 +45,17 @@ const sponsors = [
     image: "/images/elks.png",
     website: "https://simivalleyelks.com/",
   },
+  {
+    name: "Tieche Engineered Systems",
+    image: "/images/tieche.png",
+    website: "https://tiecheusa.com/website/",
+  },
+  {
+    name: "Simi Valley Police Foundation",
+    image: "/images/simi-police.png",
+    website: "https://www.svpf.org/",
+  }
+
 
 ]
 
