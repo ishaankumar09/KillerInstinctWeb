@@ -406,30 +406,30 @@ export default function HomePage() {
               <h4 className="text-xl font-bold text-white mb-4 font-sans">Upcoming Events</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">Meet 0 @ Ojai Valley School </span>
+                  <span className="text-white/90 font-sans">Meet 2 @ Ojai Valley School </span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Oct 18
+                    Nov 15
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">Meet 1 @ Ojai Valley School</span>
+                  <span className="text-white/90 font-sans">Meet 3 @ Ojai Valley School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Nov 1
+                    Dec 13
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">Meet 2 @ Ojai Valley School</span>
+                  <span className="text-white/90 font-sans">ILT @ Ojai Valley School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Nov 13
+                    Jan 31
                   </Badge>
                 </div>
               </div>
