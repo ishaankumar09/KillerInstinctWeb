@@ -424,7 +424,7 @@ export default function HomePage() {
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">ILT @ Ojai Valley School</span>
+                  <span className="text-white/90 font-sans">ILT @ Monrovia High School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
