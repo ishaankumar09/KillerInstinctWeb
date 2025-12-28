@@ -1,6 +1,4 @@
 "use client"
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
 
 const teamMembers = [
   {
@@ -153,75 +151,9 @@ export default function TeamPage() {
 
             <div className="flex items-center justify-center">
               <div className="w-full max-w-lg">
-                <Carousel
-                  className="w-full"
-                  plugins={[
-                    Autoplay({
-                      delay: 3000,
-                      stopOnInteraction: true,
-                      stopOnMouseEnter: true,
-                    }),
-                  ]}
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                >
-                  <CarouselContent>
-                    <CarouselItem>
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <img src="/images/teampic.JPG" alt="Team pic" className="w-full h-full object-cover" />
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <img
-                          src="/images/pic1.JPG"
-                          alt="Robot in competition"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <img 
-                          src="/images/pic2.JPG" 
-                          alt="Award ceremony" 
-                          className="w-full h-full object-cover"
-                         />
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <div className="p-1">
-                        <div className="aspect-video overflow-hidden rounded-lg">
-                          <img
-                            src="/images/jonas.jpg"
-                            alt="jonas with robot"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <img
-                          src="/images/pic3.JPG"
-                          alt="Team at competition"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <img
-                          src="/images/kasra-goon.JPG"
-                          alt="kasra goon"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </CarouselItem>
-                  </CarouselContent>
-                </Carousel>
+                <div className="aspect-video overflow-hidden rounded-lg">
+                  <img src="/images/team2025.JPG" alt="Team pic" className="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </div>

@@ -61,7 +61,7 @@ export default function HomePage() {
                     showSecondLine ? "typewriter-mobile-second" : "opacity-0"
                   }`}
                 >
-                  Instinct.
+                  Instinct
                 </h1>
               </div>
               <h1
@@ -69,7 +69,7 @@ export default function HomePage() {
                   showDesktopTypewriter ? "typewriter typewriter-delay" : "opacity-0"
                 }`}
               >
-                Killer Instinct.
+                Killer Instinct
               </h1>
             </div>
             <p className="text-white/90 text-2xl md:text-3xl lg:text-4xl mb-12 font-sans font-medium">
@@ -92,7 +92,7 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-sans text-white mb-4">Our Sponsors</h2>
-              <p className="text-lg text-white/70 font-sans">
+              <p className="text-lg text-white/70 font-sans font-weight-500">
                 Proudly supported by industry leaders who believe in STEM education
               </p>
             </div>
@@ -406,7 +406,7 @@ export default function HomePage() {
               <h4 className="text-xl font-bold text-white mb-4 font-sans">Upcoming Events</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">Meet 2 @ Ojai Valley School </span>
+                  <s className="text-white/90 font-sans">Meet 2 @ Ojai Valley School </s>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
@@ -415,7 +415,7 @@ export default function HomePage() {
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <span className="text-white/90 font-sans">Meet 3 @ Ojai Valley School</span>
+                  <s className="text-white/90 font-sans">Meet 3 @ Ojai Valley School</s>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
