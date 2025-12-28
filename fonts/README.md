@@ -10,3 +10,4 @@ The font is configured in `app/layout.tsx` and will be applied globally across t
 
 If you need additional weights or styles, you can add them to the `localFont` configuration in `app/layout.tsx`.
 
+
