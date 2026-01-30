@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { ChevronDown, Linkedin, Instagram, Github } from "lucide-react"
+import { ChevronDown, Linkedin, Instagram, Github, Youtube } from "lucide-react"
 
 export default function GlassmorphNavbar() {
   // Dropdown state
@@ -67,6 +67,7 @@ export default function GlassmorphNavbar() {
       label: "Resources",
       dropdown: true,
       items: [
+        { label: "CAD Videos", href: "/resources/build/cad" },
         { label: "Website Building", href: "/resources/website-building" },
         { label: "Portfolio Building", href: "/resources/portfolio-building" },
         { label: "Past Portfolios", href: "/resources/portfolios" },
@@ -77,9 +78,11 @@ export default function GlassmorphNavbar() {
   ]
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/company/20381-killer-instinct", label: "LinkedIn" },
+    { icon: Youtube, href: "https://www.youtube.com/@sshsroboticsclub8", label: "Youtube" },
     { icon: Instagram, href: "https://www.instagram.com/sshsfirstrobotics", label: "Instagram" },
-    { icon: Github, href: "https://github.com/ishaankumar09/KillerInstinctWeb", label: "GitHub" },
+    { icon: Github, href: "https://github.com/luca-flood/Decode-20381#", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/20381-killer-instinct", label: "LinkedIn" },
+    
   ]
 
   // Dropdown toggle handlers

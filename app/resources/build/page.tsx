@@ -27,9 +27,9 @@ export default function BuildHub() {
     },
     {
       title: "CAD",
-      description: "Basics for learning Computer Aided Design (CAD) for robot design.",
+      description: "Learn the basics of Fusion 360 from our collection of videos and tutorials.",
       icon: ComputerIcon,
-      href: "resources/build/resources",
+      href: "resources/build/cad",
     },
   ]
 

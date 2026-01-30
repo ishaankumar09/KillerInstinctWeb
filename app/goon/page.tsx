@@ -65,22 +65,13 @@ export default function GoonPage() {
               }`}
             >
               {/* @ts-ignore - model-viewer is a custom web component */}
-              <model-viewer
-                src="/models/shock-blue.glb"
-                alt="Shock Blue Robot"
-                auto-rotate
-                camera-controls
-                interaction-policy="allow-when-focused"
-                style={{
-                  width: "100%",
-                  height: "500px",
-                  backgroundColor: "transparent",
-                }}
-                className="rounded-lg"
-                exposure="1.0"
-                shadow-intensity="1"
-                shadow-softness="0.5"
-              />
+              <iframe 
+              src="https://simivalleyusd144.autodesk360.com/shares/public/SH90d2dQT28d5b602811e3370f1af986f14d?mode=embed" 
+              width="640" 
+              height="480" 
+              allowFullScreen={true}
+              frameBorder="0">
+              </iframe>
             </div>
           </section>
         </div>
