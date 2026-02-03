@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
-import { ChevronDown, Linkedin, Instagram, Github, Youtube } from "lucide-react"
+import { ChevronDown, Binoculars, Instagram, Github, Youtube } from "lucide-react"
 
 export default function GlassmorphNavbar() {
   // Dropdown state
@@ -79,9 +79,9 @@ export default function GlassmorphNavbar() {
 
   const socialLinks = [
     { icon: Youtube, href: "https://www.youtube.com/@sshsroboticsclub8", label: "Youtube" },
-    { icon: Instagram, href: "https://www.instagram.com/sshsfirstrobotics", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/killerinstinct_20381/", label: "Instagram" },
     { icon: Github, href: "https://github.com/luca-flood/Decode-20381#", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/20381-killer-instinct", label: "LinkedIn" },
+    { icon: Binoculars, href: "https://ftcscout.org/teams/20381", label: "FTC Scout" },
     
   ]
 

@@ -479,16 +479,11 @@ export default function Season2025Page() {
                   <p className="text-white/80 font-sans">SoCal Regional Placement</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">60</div>
-                  <p className="text-white/80 font-sans">Highest Autonomous Score</p>
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">2nd</div>
+                  <p className="text-white/80 font-sans">Inspire Award Placement</p>
                 </div>
               </div>
-              <div className="mt-8 text-center">
-                <p className="text-xl text-white/90 font-sans">
-                  Our most technically advanced and successful season, featuring groundbreaking innovations in
-                  autonomous programming, computer vision, and mechanical engineering.
-                </p>
-              </div>
+              
             </CardContent>
           </Card>
           <div>

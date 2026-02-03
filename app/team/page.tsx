@@ -1,4 +1,6 @@
 "use client"
+import Image from 'next/image'
+
 
 const teamMembers = [
   {
@@ -165,10 +167,11 @@ export default function TeamPage() {
                 {teamMembers.map((member, index) => (
                   <div key={index} className="text-center">
                     <div className="w-full h-48 mb-4 overflow-hidden rounded-lg bg-white/20 transition-all duration-300 hover:scale-105">
-                      <img
+                      <Image
                         src={member.image || "/placeholder.svg"}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        width={256}
+                        height={256}
                       />
                     </div>
                     <h3 className="text-lg font-bold text-white font-sans mb-1">{member.name}</h3>

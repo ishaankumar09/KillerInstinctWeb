@@ -26,9 +26,7 @@ export default function Portfolios() {
           </p>
         </div>
 
-        {/* Seasons Grid */}
         <div className="grid gap-8">
-          {/* 2024-2025 Season */}
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 transition-all duration-300 hover:bg-white/15 hover:scale-[1.02]">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -56,9 +54,46 @@ export default function Portfolios() {
                   <div>
                       <img
                         src="/images/intothedeep.png"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                         alt="FTC Into the Deep"
+                        className="rounded-lg"
+                      />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/10 backdrop-blur-sm pt-4 border-white/20 transition-all duration-300 hover:bg-white/15 hover:scale-[1.02]">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-400/30">2025-2026</Badge>
+                  </div>
+                  <h2 className="text-3xl font-bold text-white mb-4 font-sans">FTC Decode</h2>
+                  <p className="text-white/80 font-sans mb-6">
+                    Final season portfolio for our 2025-2026 FTC season, "Decode". 
+                    Highlights our robot design, subsystems developed, and additional outreach efforts.
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white transition-all duration-300 hover:scale-105 font-sans"
+                    asChild
+                  >
+                    <Link target="_blank" href="/documents/2026_portfolio.pdf" className="flex items-center gap-2">
+                      View Details
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </div>
+                <div className="flex justify-center">
+                  <div>
+                      <img
+                        src="/images/decode.png"
+                        width={150}
+                        height={150}
+                        alt="FTC Decode"
                         className="rounded-lg"
                       />
                   </div>
