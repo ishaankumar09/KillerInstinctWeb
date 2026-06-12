@@ -5,23 +5,28 @@ import Image from 'next/image'
 const teamMembers = [
   {
     name: "Kasra Hoor",
-    role: "Mechanical Lead",
+    role: "President",
     image: "/images/kasra.jpg",
   },
   {
     name: "Cain Guevera",
-    role: "",
+    role: "Mechanical Lead",
     image: "/images/cain.jpg",
-  },
-  {
-    name: "James Vu",
-    role: "",
-    image: "/images/james.jpg",
   },
   {
     name: "Arsh Gandhi",
     role: "",
     image: "/images/arsh.jpg",
+  },
+  {
+    name: "Harpreet Gill",
+    role: "",
+    image: "/images/harpreet.jpg",
+  },
+  {
+    name: "Jules Picache",
+    role: "",
+    image: "/images/jules.jpg",
   },
 ]
 
@@ -31,6 +36,11 @@ const programmingMembers = [
     name: "Luca Flood",
     role: "Programming Lead",
     image: "/images/luca.png",
+  },
+   {
+    name: "Ishaan Kumar",
+    role: "",
+    image: "/images/ishaank.jpg",
   },
   {
     name: "Adithi Murlidas",
@@ -60,29 +70,6 @@ const programmingMembers = [
 ]
 
 
-const cadMembers = [
-  {
-    name: "Gavin Hudson",
-    role: "Club President",
-    image: "/images/gavin.jpg",
-  },
-  {
-    name: "Harpreet Gill",
-    role: "Club Secretary",
-    image: "/images/harpreet.jpg",
-  },
-  {
-    name: "Caden Weaver",
-    role: "",
-    image: "/images/caden.png",
-  },
-  {
-    name: "Jules Picache",
-    role: "",
-    image: "/images/jules.jpg",
-  },
-]
-
 const outreachMembers = [
   {
     name: "Daniel Zaki",
@@ -90,38 +77,8 @@ const outreachMembers = [
     image: "/images/daniel.jpg",
   },
   {
-    name: "Chloe Asidera",
-    role: "",
-    image: "/images/chloe.jpg",
-  },
-  {
-    name: "Ishaan Kumar",
-    role: "",
-    image: "/images/ishaank.jpg",
-  },
-  {
-    name: "Mingun Cho",
-    role: "",
-    image: "/images/mingun.png",
-  },
-  {
-    name: "Ryan Nian",
-    role: "",
-    image: "/images/ryan.png",
-  },
-  {
-    name: "Gabriella Aguilar",
-    role: "",
-    image: "/images/gabby.jpg",
-  },
-  {
-    name: "Trish Nguyen",
-    role: "",
-    image: "/images/trish.png",
-  },
-  {
     name: "Aiden Long",
-    role: "",
+    role: "Club Secratery",
     image: "/images/aiden.JPG",
   },
 ]
@@ -185,25 +142,6 @@ export default function TeamPage() {
               <h2 className="text-3xl font-bold font-sans text-white mb-8">Programming</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {programmingMembers.map((member, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-full h-48 mb-4 overflow-hidden rounded-lg bg-white/20 transition-all duration-300 hover:scale-105">
-                      <img
-                        src={member.image || "/placeholder.svg"}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold text-white font-sans mb-1">{member.name}</h3>
-                    {member.role && <p className="text-sm text-cyan-400 font-sans">{member.role}</p>}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold font-sans text-white mb-8">CAD</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                {cadMembers.map((member, index) => (
                   <div key={index} className="text-center">
                     <div className="w-full h-48 mb-4 overflow-hidden rounded-lg bg-white/20 transition-all duration-300 hover:scale-105">
                       <img
