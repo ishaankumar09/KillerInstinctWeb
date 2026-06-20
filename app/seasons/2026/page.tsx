@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Trophy, Target, Cog, Zap, Camera, Cpu, Calendar, Award } from "lucide-react"
+import { Trophy, Target, Cog, Zap, Camera, Cpu, Calendar, Award, FileText, Users } from "lucide-react"
 
 export default function Season2026Page() {
   return (
@@ -106,11 +106,11 @@ export default function Season2026Page() {
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Target className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                    <Users className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-lg font-bold text-white font-sans">Community</h3>
                   </div>
                   <p className="text-white/80 font-sans"> 
-                    new goals here
+                    Maximize our community impact with our robotics.
                   </p>
                 </CardContent>
               </Card>
@@ -118,11 +118,11 @@ export default function Season2026Page() {
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Camera className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                    <FileText className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-lg font-bold text-white font-sans">Documentation</h3>
                   </div>
                   <p className="text-white/80 font-sans">
-                  add description here
+                  Document the engineering process of our robot with CAD.
                   </p>
                 </CardContent>
               </Card>
@@ -131,10 +131,10 @@ export default function Season2026Page() {
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Cpu className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                    <h3 className="text-lg font-bold text-white font-sans">Optimization</h3>
                   </div>
                   <p className="text-white/80 font-sans">
-                  add description here
+                  Optimize our robot’s autonomous routines
                   </p>
                 </CardContent>
               </Card>
@@ -143,10 +143,10 @@ export default function Season2026Page() {
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Cog className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                    <h3 className="text-lg font-bold text-white font-sans">Reliability</h3>
                   </div>
                   <p className="text-white/80 font-sans">
-                  add description here
+                  Improve robot reliability throughout the season.
                   </p>
                 </CardContent>
               </Card>
@@ -159,11 +159,11 @@ export default function Season2026Page() {
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">copy new goal here</h3>
+                  <Users className="w-6 h-6 text-cyan-400" />
+                  <h3 className="text-lg font-bold text-white font-sans">Community</h3>
                 </div>
                 <p className="text-white/80 font-sans">
-                  new goal
+                  Maximize our community impact with our robotics.
                 </p>
               </CardContent>
             </Card>
@@ -171,11 +171,11 @@ export default function Season2026Page() {
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Camera className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                  <FileText className="w-6 h-6 text-cyan-400" />
+                  <h3 className="text-lg font-bold text-white font-sans">Documentation</h3>
                 </div>
                 <p className="text-white/80 font-sans">
-                new goal
+                Document the engineering process of our robot with CAD.
                 </p>
               </CardContent>
             </Card>
@@ -197,10 +197,10 @@ export default function Season2026Page() {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Cpu className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                  <h3 className="text-lg font-bold text-white font-sans">Optimization</h3>
                 </div>
                 <p className="text-white/80 font-sans">
-                 new goal
+                 Optimize our robot’s autonomous routines
                 </p>
               </CardContent>
             </Card>
@@ -209,10 +209,10 @@ export default function Season2026Page() {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Cog className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">new goal</h3>
+                  <h3 className="text-lg font-bold text-white font-sans">Reliability</h3>
                 </div>
                 <p className="text-white/80 font-sans">
-                  new goal
+                  Improve robot reliability throughout the season.
                 </p>
               </CardContent>
             </Card>
@@ -222,57 +222,70 @@ export default function Season2026Page() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 font-sans">Key Achievements</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6">
-                <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2 font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-2xl font-bold mb-2"></p>
-                <p className="text-white/70 font-sans text-sm"></p>
+
+            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
+              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
+                <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
+                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
+                Brief description here.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6">
-                <Cog className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2 font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold mb-2"></p>
-                <p className="text-white/70 font-sans text-sm"></p>
+            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
+              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
+                <Cog className="w-12 h-12 text-cyan-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
+                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
+                Brief description here.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6">
-                <Zap className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2 font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold mb-2"></p>
-                <p className="text-white/70 font-sans text-sm"></p>
+            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
+              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
+                <Zap className="w-12 h-12 text-green-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
+                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
+                Brief description here.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6">
-                <Camera className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2 font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold mb-2"></p>
-                <p className="text-white/70 font-sans text-sm"></p>
+            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
+              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
+                <Camera className="w-12 h-12 text-purple-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
+                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
+                Brief description here.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6">
-                <Award className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2 font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold mb-2"></p>
-                <p className="text-white/70 font-sans text-sm"></p>
+            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
+              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
+                <Award className="w-12 h-12 text-orange-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
+                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
+                Brief description here.
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6">
-                <Cpu className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2 font-sans">Add key achivements</h3>
-                <p className="text-cyan-400 text-lg font-bold mb-2"></p>
-                <p className="text-white/70 font-sans text-sm"></p>
+            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
+              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
+                <Cpu className="w-12 h-12 text-blue-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
+                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
+                Brief description here.
+                </p>
               </CardContent>
             </Card>
           </div>
