@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Trophy, Target, Cog, Zap, Camera, Cpu, Calendar, Award, FileText, Users } from "lucide-react"
+import { Cog, Zap, Flower, Cpu, Calendar, CircleGauge, FileText, Users, LifeBuoy, CableCar, SquareArrowUpIcon } from "lucide-react"
 
 export default function Season2026Page() {
   return (
@@ -134,7 +134,7 @@ export default function Season2026Page() {
                     <h3 className="text-lg font-bold text-white font-sans">Optimization</h3>
                   </div>
                   <p className="text-white/80 font-sans">
-                  Optimize our robot’s autonomous routines
+                  Optimize our robot’s autonomous routines.
                   </p>
                 </CardContent>
               </Card>
@@ -200,7 +200,7 @@ export default function Season2026Page() {
                   <h3 className="text-lg font-bold text-white font-sans">Optimization</h3>
                 </div>
                 <p className="text-white/80 font-sans">
-                 Optimize our robot’s autonomous routines
+                 Optimize our robot’s autonomous routines.
                 </p>
               </CardContent>
             </Card>
@@ -220,77 +220,77 @@ export default function Season2026Page() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Key Achievements</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Robot Features</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <Zap className="w-12 h-12 text-yellow-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Strongest FTC-Legal Servos</h3>
+                <p className="text-cyan-400 text-lg font-bold">6V Servo Power Hub</p>
                 <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Brief description here.
+                6V servo power hub, instead of 4.8V control hubs used by other teams
                 </p>
               </CardContent>
             </Card>
 
             <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Cog className="w-12 h-12 text-cyan-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <CableCar className="w-12 h-12 text-cyan-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Compact Slide System</h3>
+                <p className="text-cyan-400 text-lg font-bold">200lb Kevlar Strings</p>
                 <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Brief description here.
+                High-torque, hyper-compact aluminum pullies and kevlar strings
                 </p>
               </CardContent>
             </Card>
 
             <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Zap className="w-12 h-12 text-green-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <LifeBuoy className="w-12 h-12 text-green-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">MEGA-NUM Wheels</h3>
+                <p className="text-cyan-400 text-lg font-bold">64% Weight Decrease</p>
                 <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Brief description here.
+                Aluminum 3D-printed wheels, custom-made in Fusion 360
                 </p>
               </CardContent>
             </Card>
 
             <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Camera className="w-12 h-12 text-purple-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <SquareArrowUpIcon className="w-12 h-12 text-purple-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Instant Intake System</h3>
+                <p className="text-cyan-400 text-lg font-bold">0.17s per Artifact</p>
                 <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Brief description here.
+                Rubber band roller with custom nylon spools, powered by a 1150 RPM motor
                 </p>
               </CardContent>
             </Card>
 
             <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Award className="w-12 h-12 text-orange-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <Flower className="w-12 h-12 text-orange-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Compact Extension Pulleys</h3>
+                <p className="text-cyan-400 text-lg font-bold">Smallest Extension Pulleys Ever</p>
                 <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Brief description here.
+                The world's smallest extension pulleys; extremely strong with low volume
                 </p>
               </CardContent>
             </Card>
 
             <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
               <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Cpu className="w-12 h-12 text-blue-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Add key acheviements</h3>
-                <p className="text-cyan-400 text-lg font-bold">100% Stat Here</p>
+                <CircleGauge className="w-12 h-12 text-blue-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
+                <h3 className="text-lg font-bold text-white font-sans">Tele-Op Auto Controls</h3>
+                <p className="text-cyan-400 text-lg font-bold">3/3 Primary Functions</p>
                 <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Brief description here.
+                Automatic aiming, automatic shooting, and automatic intake, to assist the driver
                 </p>
               </CardContent>
             </Card>
           </div>
         </section>
-
+        {/*i might make this a table, since in the portfolio the meets are a bunch of different timelines based on what part was being worked on -vishwa*/}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 font-sans">Development Timeline</h2>
           <div className="space-y-6">
@@ -304,7 +304,10 @@ export default function Season2026Page() {
                   </Badge>
                 </div>
                 <ul className="space-y-2 text-white/80 font-sans ml-9">
-                  <li>• Add in bullet list of characteristics at each meet</li>
+                  <li>• Slow intake time (2.37sec)</li>
+                  <li>• Limitation: Only fit 1 artifact, no preloading artifacts</li>
+                  <li>• Dual-roller design</li>
+                  <li>• Problem: Intake system frequently broke down</li>
                 </ul>
               </CardContent>
             </Card>
@@ -313,13 +316,15 @@ export default function Season2026Page() {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 1 - Major Overhaul</h3>
-                  <Badge variant="outline" className="border-yellow-400/50 text-yellow-300">
-                    Mid Season
+                  <h3 className="text-xl font-bold text-white font-sans">Meet 1-2 - Major Overhaul</h3>
+                  <Badge variant="outline" className="border-orange-400/50 text-orange-300">
+                    Mid-Season
                   </Badge>
                 </div>
                 <ul className="space-y-2 text-white/80 font-sans ml-9">
-                  <li>• Add in bullet list of characteristics at each meet</li>
+                <li>• Near-instant intake time (0.17sec)</li>
+                <li>• Could store up to 3 artifacts</li>
+                <li>• Limitation: Slow servo</li>
                 </ul>
               </CardContent>
             </Card>
@@ -328,13 +333,16 @@ export default function Season2026Page() {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 2-3 - Midseason Innovation</h3>
+                  <h3 className="text-xl font-bold text-white font-sans">Meet 3-ILT - Midseason Innovation</h3>
                   <Badge variant="outline" className="border-orange-400/50 text-orange-300">
                     Innovation Phase
                   </Badge>
                 </div>
                 <ul className="space-y-2 text-white/80 font-sans ml-9">
-                <li>• Add in bullet list of characteristics at each meet</li>
+                <li>• Near-instant intake time (0.17sec)</li>
+                <li>• Short, wide flap intake → no jamming</li>
+                <li>• Could store up to 3 artifacts, with preloading</li>
+                <li>• Fast servo for quick intake speeds</li>
                 </ul>
               </CardContent>
             </Card>
@@ -372,13 +380,15 @@ export default function Season2026Page() {
               </div>
             </div>
             <div className="flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-6 font-sans">Add in sensor pipeline descirption here</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 font-sans">Sensors</h3>
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 flex-grow">
                 <CardContent className="p-6 h-full flex flex-col justify-center">
                   <div className="space-y-3 text-white/80 font-sans">
-                    <p>
-                      <strong className="text-cyan-400">Camera:</strong> Logitech C920x captures frames
-                    </p>
+                    <p><strong className="text-cyan-400">Limelight:</strong> April Tag Detection</p>
+                    <p><strong className="text-cyan-400">Logitech C920:</strong> Color Blobs</p>
+                    <p><strong className="text-cyan-400">Color:</strong> Artifact Transfer</p>
+                    <p><strong className="text-cyan-400">Proximity:</strong> Robot Pose</p>
+                    <p><strong className="text-cyan-400">Encoders:</strong> Flywheel Velocity & Turret Position</p>
                    
                   </div>
                 </CardContent>
