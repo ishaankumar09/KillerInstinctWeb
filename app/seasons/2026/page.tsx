@@ -398,12 +398,12 @@ export default function Season2026Page() {
           <div className="grid md:grid-cols-1 gap-8">
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-4 font-sans">Add in turret tracking description here</h3>
+                <h3 className="text-xl font-bold text-white mb-4 font-sans">Turret Tracking</h3>
                 <div className="space-y-3 text-white/80 font-sans">
-                  <p>
-                    <strong className="text-cyan-400">Physics:</strong> Motor torque → force conversion calculations
-                  </p>
-                  
+                  <p><strong className="text-cyan-400">Kinematic Turret Tracking:</strong>Ensure the turret is facing the depot </p>
+                  <p><strong className="text-cyan-400">Limelight Turret Tracking:</strong>Give us accurate tracking not affected by drift</p>
+                  <p><strong className="text-cyan-400"> Camera tracking PIDF:</strong>Ensure exact precision </p>
+                  <p><strong className="text-cyan-400"> Dual Tracking:</strong>If the robot velocity fall under 5 in /sec then the tracking will switch to limelight, otherwise it will always be kinematic.</p>
                 </div>
               </CardContent>
             </Card>
