@@ -316,7 +316,7 @@ export default function Season2026Page() {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 1-2 - Major Overhaul</h3>
+                  <h3 className="text-xl font-bold text-white font-sans">Meet 1-2 - Midseason Innovation</h3>
                   <Badge variant="outline" className="border-orange-400/50 text-orange-300">
                     Mid-Season
                   </Badge>
@@ -333,9 +333,9 @@ export default function Season2026Page() {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 3-ILT - Midseason Innovation</h3>
-                  <Badge variant="outline" className="border-orange-400/50 text-orange-300">
-                    Innovation Phase
+                  <h3 className="text-xl font-bold text-white font-sans">Meet 3-ILT - Competitive Peak</h3>
+                  <Badge variant="outline" className="border-green-400/50 text-green-300">
+                    Peak Performance
                   </Badge>
                 </div>
                 <ul className="space-y-2 text-white/80 font-sans ml-9">
@@ -343,21 +343,6 @@ export default function Season2026Page() {
                 <li>• Short, wide flap intake → no jamming</li>
                 <li>• Could store up to 3 artifacts, with preloading</li>
                 <li>• Fast servo for quick intake speeds</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Post-ILT - Competitive Peak</h3>
-                  <Badge variant="outline" className="border-green-400/50 text-green-300">
-                    Peak Performance
-                  </Badge>
-                </div>
-                <ul className="space-y-2 text-white/80 font-sans ml-9">
-                <li>• Add in bullet list of characteristics at each meet</li>
                 </ul>
               </CardContent>
             </Card>
@@ -416,7 +401,7 @@ export default function Season2026Page() {
             <CardContent className="p-8">
               <div className="grid md:grid-cols-3 gap-8 text-center"> //change ts to match last season results
                 <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">1st</div>
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">2nd</div>
                   <p className="text-white/80 font-sans">League Placement</p>
                 </div>
                 <div>
