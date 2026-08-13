@@ -328,6 +328,7 @@ export default function Season2026Page() {
                 </ul>
               </CardContent>
             </Card>
+            
 
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
@@ -399,15 +400,7 @@ export default function Season2026Page() {
           <h2 className="text-3xl font-bold text-white mb-8 font-sans">Season Results</h2>
           <Card className="bg-white/10 backdrop-blur-sm border-white/20">
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-3 gap-8 text-center"> //change ts to match last season results
-                <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">2nd</div>
-                  <p className="text-white/80 font-sans">League Placement</p>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">16th</div>
-                  <p className="text-white/80 font-sans">SoCal Regional Placement</p>
-                </div>
+              <div className="grid md:grid-cols-3 gap-8 text-center"> 
                 <div>
                   <div className="text-4xl font-bold text-cyan-400 mb-2">1st</div>
                   <p className="text-white/80 font-sans">Control Award Placement</p>
