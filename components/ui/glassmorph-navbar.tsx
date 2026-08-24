@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useState, useEffect, useRef } from "react"
 import { ChevronDown, Binoculars, Instagram, Github, Youtube } from "lucide-react"
 
@@ -16,6 +17,16 @@ export default function GlassmorphNavbar() {
   const resourcesRef = useRef<HTMLDivElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
+  // Close every menu once navigation actually lands. Closing inside the tap
+  // handler would unmount the <a> before the browser dispatches its click,
+  // which silently cancels the navigation on touch devices.
+  const pathname = usePathname()
+  useEffect(() => {
+    setIsSeasonsOpen(false)
+    setIsResourcesOpen(false)
+    setIsMobileMenuOpen(false)
+  }, [pathname])
+
   // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent | TouchEvent) {
@@ -26,6 +37,12 @@ export default function GlassmorphNavbar() {
       const clickedLink = element?.closest("a")
       if (clickedLink) {
         // If it's a link, completely skip the click-outside logic
+        return
+      }
+
+      // Taps inside the mobile nav (hamburger button or panel) are handled by
+      // their own handlers - closing here would fight the toggle.
+      if (element?.closest("[data-mobile-nav]")) {
         return
       }
       
@@ -101,14 +118,8 @@ export default function GlassmorphNavbar() {
     }
   }
 
-  const closeAllDropdowns = () => {
-    setIsSeasonsOpen(false)
-    setIsResourcesOpen(false)
-    setIsMobileMenuOpen(false)
-  }
-
   // Render dropdown items
-  const renderDropdown = (items: any[], closeHandler: () => void, width = "w-32") => (
+  const renderDropdown = (items: any[], width = "w-32") => (
     <div
       className={`absolute top-full mt-2 right-0 ${width} bg-black/80 backdrop-blur-md border border-white/20 rounded-lg shadow-lg overflow-hidden`}
     >
@@ -116,7 +127,6 @@ export default function GlassmorphNavbar() {
         <Link
           key={index}
           href={item.href}
-          onClick={closeHandler}
           className="block px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium text-sm"
         >
           {item.label}
@@ -151,22 +161,6 @@ export default function GlassmorphNavbar() {
                   <Link
                     key={index}
                     href={subItem.href}
-                    onClick={(e) => {
-                      // Stop all event propagation
-                      e.stopPropagation()
-                      // Close menu - navigation will happen via Next.js Link
-                      setIsSeasonsOpen(false)
-                      setIsResourcesOpen(false)
-                      setIsMobileMenuOpen(false)
-                    }}
-                    onMouseDown={(e) => {
-                      // Also stop mousedown to prevent any interference
-                      e.stopPropagation()
-                    }}
-                    onTouchStart={(e) => {
-                      // Stop touch events too
-                      e.stopPropagation()
-                    }}
                     className="block px-8 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium text-sm cursor-pointer"
                   >
                     {subItem.label}
@@ -191,11 +185,7 @@ export default function GlassmorphNavbar() {
             <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
           </button>
           {isOpen &&
-            renderDropdown(
-              item.items,
-              () => (item.label === "Seasons" ? setIsSeasonsOpen(false) : setIsResourcesOpen(false)),
-              item.label === "Resources" ? "w-44" : "w-32",
-            )}
+            renderDropdown(item.items, item.label === "Resources" ? "w-44" : "w-32")}
         </div>
       )
     }
@@ -205,14 +195,6 @@ export default function GlassmorphNavbar() {
         <Link
           key={item.label}
           href={item.href}
-          onClick={(e) => {
-            e.stopPropagation()
-            closeAllDropdowns()
-          }}
-          onTouchEnd={(e) => {
-            e.stopPropagation()
-            closeAllDropdowns()
-          }}
           className="px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-colors duration-200 font-sans font-medium"
         >
           {item.label}
@@ -262,11 +244,12 @@ export default function GlassmorphNavbar() {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden relative">
+      <div className="md:hidden" data-mobile-nav>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="text-white/90 hover:text-white transition-colors duration-200"
+          className="-mr-2 p-2 text-white/90 hover:text-white transition-colors duration-200"
           aria-label="Toggle mobile menu"
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -281,9 +264,9 @@ export default function GlassmorphNavbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div 
+          <div
             ref={mobileMenuRef}
-            className="absolute top-full right-0 mt-2 w-screen max-w-sm bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-lg overflow-hidden z-50"
+            className="absolute left-0 right-0 top-[4.5rem] ml-auto w-auto max-w-sm bg-black/90 backdrop-blur-md border border-white/20 rounded-lg shadow-lg z-50 max-h-[calc(100vh-9rem)] overflow-y-auto overscroll-contain"
           >
             <div className="flex flex-col py-2">
               {/* Mobile Navigation Items */}

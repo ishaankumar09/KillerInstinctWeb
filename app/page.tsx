@@ -97,7 +97,12 @@ export default function HomePage() {
               </p>
             </div>
             <div className="relative overflow-hidden">
-              <div className="flex space-x-20 items-center justify-center sponsor-scroll">
+              <div className="flex items-center sponsor-scroll">
+                <img
+                  src="/images/tieche.png"
+                  alt="Tieche Engineered Systems"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
                 <img
                   src="/images/Hass.png"
                   alt="Gene Haas Foundation"
@@ -136,11 +141,6 @@ export default function HomePage() {
                 <img
                   src="/images/elks.png"
                   alt="Elks Lodge"
-                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
-                />
-                <img
-                  src="/images/tieche.png"
-                  alt="Tieche Engineered Systems"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
@@ -149,6 +149,11 @@ export default function HomePage() {
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
+                  src="/images/tieche.png"
+                  alt="Tieche Engineered Systems"
+                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
+                />
+                <img
                   src="/images/Hass.png"
                   alt="Gene Haas Foundation"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
@@ -186,11 +191,6 @@ export default function HomePage() {
                 <img
                   src="/images/elks.png"
                   alt="Elks Lodge"
-                  className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
-                />
-                <img
-                  src="/images/tieche.png"
-                  alt="Tieche Engineered Systems"
                   className="flex-shrink-0 w-48 h-24 object-contain transition-transform duration-300 hover:scale-110"
                 />
                 <img
@@ -338,7 +338,7 @@ export default function HomePage() {
             <Card className="text-center bg-white/10 backdrop-blur-sm border-white/20 transition-all duration-300 hover:bg-white/15 hover:scale-105">
               <CardContent className="pt-6">
                 <div className="text-3xl font-bold text-cyan-400 mb-2 transition-colors duration-300 hover:text-cyan-300">
-                  4
+                  5
                 </div>
                 <p className="text-white/80 font-sans">Years Active</p>
               </CardContent>
@@ -348,21 +348,21 @@ export default function HomePage() {
                 <div className="text-3xl font-bold text-cyan-400 mb-2 transition-colors duration-300 hover:text-cyan-300">
                   1st
                 </div>
-                <p className="text-white/80 font-sans">2025 League Placement</p>
+                <p className="text-white/80 font-sans">2026 Control Award</p>
               </CardContent>
             </Card>
             <Card className="text-center bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/15 hover:scale-105">
               <CardContent className="pt-6">
                 <div className="text-3xl font-bold text-cyan-400 mb-2 transition-colors duration-300 hover:text-cyan-300">
-                  16th
+                  6th
                 </div>
-                <p className="text-white/80 font-sans">2025 SoCal Regional Placement</p>
+                <p className="text-white/80 font-sans">2026 SoCal League V Placement</p>
               </CardContent>
             </Card>
             <Card className="text-center bg-white/10 backdrop-blur-sm border-white/20 transition-all duration-300 hover:bg-white/15 hover:scale-105">
               <CardContent className="pt-6">
                 <div className="text-3xl font-bold text-cyan-400 mb-2 transition-colors duration-300 hover:text-cyan-300">
-                  3
+                  4
                 </div>
                 <p className="text-white/80 font-sans">Awards Won</p>
               </CardContent>
@@ -388,17 +388,17 @@ export default function HomePage() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 font-sans">This Season's Challenge</h3>
               <p className="text-white/80 mb-6 font-sans">
-                Our team is working hard to design and build a robot for this years FTC challenge "DECODE". 
-                DECODE is centered around collecting artifacts and scoring them into team goals using various subsytems incorporated into our innovative design.
+                Our team is working hard to design and build a robot for this years FTC challenge "BioBuzz". 
+                BioBuzz is centered around collecting "pollen" and scoring them into team goals using various subsytems incorporated into our innovative design.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
                   <Calendar className="w-5 h-5 text-cyan-400" />
-                  <span className="text-white/90 font-sans">Season runs September 2025 - April 2026</span>
+                  <span className="text-white/90 font-sans">Season runs September 2026 - April 2027</span>
                 </div>
                 <div className="flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
                   <Trophy className="w-5 h-5 text-cyan-400" />
-                  <span className="text-white/90 font-sans">Regional Championships in March</span>
+                  <span className="text-white/90 font-sans">Regional Championships in February</span>
                 </div>
               </div>
             </div>
@@ -406,30 +406,30 @@ export default function HomePage() {
               <h4 className="text-xl font-bold text-white mb-4 font-sans">Upcoming Events</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <s className="text-white/90 font-sans">Meet 2 @ Ojai Valley School </s>
+                  <span className="text-white/90 font-sans">Meet 0 @ Chaminade College Preparatory </span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Nov 15
+                    Oct 31
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <s className="text-white/90 font-sans">Meet 3 @ Ojai Valley School</s>
+                  <span className="text-white/90 font-sans">Meet 1 @ Viewpoint School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Dec 13
+                    Nov 14
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center transition-all duration-300 hover:translate-x-1">
-                  <s className="text-white/90 font-sans">ILT @ Monrovia High School</s>
+                  <span className="text-white/90 font-sans">Meet 2 @ Reseda High School</span>
                   <Badge
                     variant="outline"
                     className="border-cyan-400/50 text-cyan-300 transition-colors duration-300 hover:border-cyan-300"
                   >
-                    Jan 31
+                    Dec 5
                   </Badge>
                 </div>
               </div>
