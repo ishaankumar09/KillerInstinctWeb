@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Kasra Hoor",
     role: "President",
-    image: "/images/kasra.jpg",
+    image: "/images/kasra.png",
   },
   {
     name: "Cain Guevera",
@@ -24,9 +24,24 @@ const teamMembers = [
     image: "/images/harpreet.jpg",
   },
   {
-    name: "Jules Picache",
+    name: "Dean Floro",
     role: "",
-    image: "/images/jules.jpg",
+    image: "/images/dean.jpg",
+  },
+  {
+    name: "Shruthi Garapati",
+    role: "",
+    image: "/images/shruthi.jpg",
+  },
+  {
+    name: "James Martin",
+    role: "",
+    image: "/images/james_m.jpg",
+  },
+  {
+    name: "Ethan Lui",
+    role: "",
+    image: "/images/ethan.jpg",
   },
 ]
 
@@ -40,7 +55,12 @@ const programmingMembers = [
    {
     name: "Ishaan Kumar",
     role: "",
-    image: "/images/ishaank.jpg",
+    image: "/images/ishaank.JPEG",
+  },
+  {
+    name: "Sean Hang",
+    role: "",
+    image: "/images/sean.jpg",
   },
   {
     name: "Adithi Murlidas",
@@ -53,19 +73,24 @@ const programmingMembers = [
     image: "/images/nathan.jpg",
   },
   {
-    name: "Sean Hang",
-    role: "",
-    image: "/images/sean.jpg",
-  },
-  {
     name: "Seth Lin",
     role: "",
     image: "/images/seth.jpg",
   },
   {
+    name: "Vishwa Madaraju",
+    role: "",
+    image: "/images/vishwa.jpg",
+  },
+  {
     name: "Aarya Nigam",
     role: "",
     image: "/images/aarya.jpg",
+  },
+  {
+    name: "Alexander Lieu",
+    role: "",
+    image: "/images/alex.jpg",
   },
 ]
 
@@ -78,8 +103,23 @@ const outreachMembers = [
   },
   {
     name: "Aiden Long",
-    role: "Club Secratery",
+    role: "Club Secretary",
     image: "/images/aiden.JPG",
+  },
+  {
+    name: "Jules Picache",
+    role: "",
+    image: "/images/jules.jpg",
+  },
+  {
+    name: "Jaspreet Gill",
+    role: "",
+    image: "/images/jaspreet.jpg",
+  },
+  {
+    name: "Riya Ramalingam",
+    role: "",
+    image: "/images/riya.jpg",
   },
 ]
 

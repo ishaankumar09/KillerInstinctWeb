@@ -61,7 +61,12 @@ export default function GlassmorphNavbar() {
     {
       label: "Seasons",
       dropdown: true,
-      items: [{ label: "2024-2025", href: "/seasons/2025" }],
+      items: [
+        { label: "2025-2026", href: "/seasons/2026" },
+        { label: "2024-2025", href: "/seasons/2025" }
+        
+
+      ],
     },
     {
       label: "Resources",

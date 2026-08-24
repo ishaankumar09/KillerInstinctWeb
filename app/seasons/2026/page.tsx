@@ -1,8 +1,199 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Cog, Zap, Flower, Cpu, Calendar, CircleGauge, FileText, Users, LifeBuoy, CableCar, SquareArrowUpIcon } from "lucide-react"
+import {
+  ArrowRight,
+  Boxes,
+  CableCar,
+  CircleGauge,
+  Cog,
+  Crosshair,
+  ExternalLink,
+  FileText,
+  Flag,
+  Flower,
+  LifeBuoy,
+  Radar,
+  SquareArrowUpIcon,
+  Target,
+  Timer,
+  Trophy,
+  Users,
+  Zap,
+} from "lucide-react"
+
+const headlineStats = [
+  { value: "0.17s", label: "Intake per artifact", detail: "down from 2.37s at Meet 0" },
+  { value: "3", label: "Artifacts stored", detail: "with preloading" },
+  { value: "64%", label: "Lighter wheels", detail: "custom MEGA-NUM design" },
+  { value: "1st", label: "Control Award", detail: "league placement" },
+]
+
+const challengePhases = [
+  {
+    icon: Target,
+    title: "Scoring",
+    points: [
+      "Collect and shoot artifacts (wiffle balls) into a team goal",
+      "Index artifacts in a specific order for bonus points",
+      "Two launch zones — one close, one far",
+    ],
+  },
+  {
+    icon: Boxes,
+    title: "The Field",
+    points: [
+      "Two depots with a ramp to store artifacts",
+      "Artifacts come in two colors: red and blue",
+      "Designated endgame parking areas",
+    ],
+  },
+  {
+    icon: Flag,
+    title: "Endgame",
+    points: [
+      "Park both alliance robots in the designated area",
+      "Position matters — the driver-assist handles aiming so parking comes first",
+    ],
+  },
+]
+
+const seasonGoals = [
+  { icon: Users, title: "Community", text: "Maximize our community impact with our robotics." },
+  { icon: FileText, title: "Documentation", text: "Document the engineering process of our robot with CAD." },
+  { icon: CircleGauge, title: "Optimization", text: "Optimize our robot's autonomous routines." },
+  { icon: Cog, title: "Reliability", text: "Improve robot reliability throughout the season." },
+]
+
+const robotFeatures = [
+  {
+    icon: SquareArrowUpIcon,
+    color: "text-purple-400",
+    stat: "0.17s",
+    title: "Instant Intake System",
+    text: "Rubber band roller with custom nylon spools, powered by a 1150 RPM motor.",
+  },
+  {
+    icon: Zap,
+    color: "text-yellow-400",
+    stat: "6V",
+    title: "Strongest FTC-Legal Servos",
+    text: "A 6V servo power hub instead of the 4.8V control hubs used by other teams.",
+  },
+  {
+    icon: LifeBuoy,
+    color: "text-green-400",
+    stat: "-64%",
+    title: "MEGA-NUM Wheels",
+    text: "Aluminum 3D-printed wheels, custom-made in Fusion 360.",
+  },
+  {
+    icon: CableCar,
+    color: "text-cyan-400",
+    stat: "200lb",
+    title: "Compact Slide System",
+    text: "High-torque, hyper-compact aluminum pulleys running Kevlar strings.",
+  },
+  {
+    icon: Flower,
+    color: "text-orange-400",
+    stat: "Smallest",
+    title: "Compact Extension Pulleys",
+    text: "The world's smallest extension pulleys — extremely strong with very low volume.",
+  },
+  {
+    icon: CircleGauge,
+    color: "text-blue-400",
+    stat: "3 / 3",
+    title: "Tele-Op Auto Controls",
+    text: "Automatic aiming, shooting, and intake all assist the driver in-match.",
+  },
+]
+
+const timeline = [
+  {
+    meet: "Meet 0",
+    phase: "Foundation",
+    accent: "border-cyan-400/50 text-cyan-300",
+    dot: "bg-cyan-400",
+    metric: "2.37s intake",
+    wins: ["Dual-roller intake design brought online"],
+    limits: ["Only fit 1 artifact, no preloading", "Intake system frequently broke down"],
+  },
+  {
+    meet: "Meet 1–2",
+    phase: "Midseason Innovation",
+    accent: "border-orange-400/50 text-orange-300",
+    dot: "bg-orange-400",
+    metric: "0.17s intake",
+    wins: ["Near-instant intake — a 14x speedup", "Storage capacity raised to 3 artifacts"],
+    limits: ["Servo speed became the new bottleneck"],
+  },
+  {
+    meet: "Meet 3 – ILT",
+    phase: "Competitive Peak",
+    accent: "border-green-400/50 text-green-300",
+    dot: "bg-green-400",
+    metric: "0.17s + preload",
+    wins: [
+      "Short, wide flap intake eliminated jamming",
+      "3-artifact storage with preloading",
+      "Fast servo to match the intake speed",
+    ],
+    limits: [],
+  },
+]
+
+const sensors = [
+  { name: "Limelight", use: "April Tag detection" },
+  { name: "Logitech C920", use: "Color blob tracking" },
+  { name: "Color", use: "Artifact transfer" },
+  { name: "Proximity", use: "Robot pose" },
+  { name: "Encoders", use: "Flywheel velocity & turret position" },
+]
+
+const turretTracking = [
+  {
+    title: "Kinematic Tracking",
+    text: "Math-driven aiming that keeps the turret facing the depot at any robot velocity.",
+  },
+  {
+    title: "Limelight Tracking",
+    text: "April Tag vision gives accurate tracking that isn't affected by odometry drift.",
+  },
+  {
+    title: "Camera PIDF",
+    text: "A tuned PIDF loop closes the last few degrees for exact precision.",
+  },
+  {
+    title: "Dual Tracking Handoff",
+    text: "Below 5 in/sec the turret switches to Limelight; above it, kinematic tracking takes over.",
+  },
+]
+
+function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+  center = false,
+}: {
+  eyebrow: string
+  title: string
+  subtitle?: string
+  center?: boolean
+}) {
+  return (
+    <div className={`mb-8 ${center ? "text-center" : ""}`}>
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400 font-sans mb-2">{eyebrow}</p>
+      <h2 className="text-3xl font-bold text-white font-sans">{title}</h2>
+      {subtitle && (
+        <p className={`text-white/70 font-sans mt-3 max-w-2xl ${center ? "mx-auto" : ""}`}>{subtitle}</p>
+      )}
+    </div>
+  )
+}
 
 export default function Season2026Page() {
   return (
@@ -15,16 +206,24 @@ export default function Season2026Page() {
         }}
       />
       <div className="relative pt-16 z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-cyan-500/20 text-cyan-300 border-cyan-400/30">2054-2026 Season</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold font-sans text-white mb-6">FTC Decode</h1>
-          <p className="text-xl text-white/80 font-sans max-w-3xl mx-auto"> 
-            Add description here
+        {/* Hero */}
+        <section className="text-center mb-14">
+          <Badge className="mb-4 bg-cyan-500/20 text-cyan-300 border-cyan-400/30">2025-2026 Season</Badge>
+          <h1 className="text-4xl md:text-6xl font-bold font-sans text-white mb-4">FTC Decode</h1>
+          <p className="text-lg md:text-xl text-cyan-400 font-sans font-semibold mb-6">
+            Our answer: Shock Blue
           </p>
-        </div>
+          <p className="text-lg text-white/80 font-sans max-w-3xl mx-auto">
+            Decode asks alliances to launch artifacts into a team goal, chain them in the right order for bonus points,
+            and park before the buzzer. We built a turret-based shooter around a 0.17-second intake, dual kinematic and
+            vision aiming, and tele-op automation that lets the driver focus on the field instead of the shot.
+          </p>
 
-        <section className="mb-32">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans text-center">Our 2026 Team</h2>
+        </section>
+
+        {/* Team */}
+        <section className="mb-24">
+          <SectionHeading eyebrow="" title="The People Behind Shock Blue" center />
           <div className="max-w-5xl mx-auto">
             <div className="aspect-video">
               <img
@@ -36,377 +235,221 @@ export default function Season2026Page() {
           </div>
         </section>
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Challenge Overview</h2>
-          <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4 font-sans">Game Objectives</h3>
-                  <ul className="space-y-3 text-white/80 font-sans">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Collect and shoot artifacts (wiffle balls) into a team goal
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Index artifacts in a specific order to score extra points
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Park both robots in a designated area for endgame points
-                    </li>
+        {/* Challenge */}
+        <section className="mb-24">
+          <SectionHeading
+            eyebrow="The Challenge"
+            title="How Decode Is Played"
+            subtitle="Every design decision below traces back to one of these three phases."
+          />
+          <div className="grid md:grid-cols-3 gap-6">
+            {challengePhases.map((phase) => (
+              <Card key={phase.title} className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <phase.icon className="w-6 h-6 text-cyan-400" />
+                    <h3 className="text-xl font-bold text-white font-sans">{phase.title}</h3>
+                  </div>
+                  <ul className="space-y-3 text-white/80 font-sans text-sm">
+                    {phase.points.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                        {point}
+                      </li>
+                    ))}
                   </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4 font-sans">Key Field Features</h3>
-                  <ul className="space-y-3 text-white/80 font-sans">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Two Depots with a ramp to store artifacts
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                      Artifacts in two colors: red and blue
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                        Designated shooting areas: one close and one far
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
-                        Designated endgame parking areas
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Season Goals</h2>
-
-          {/* Mobile Layout */}
-          <div className="lg:hidden">
-            {/* Robot Image First on Mobile */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-white mb-6 font-sans text-center">Competition Robot</h3>
-              <div className="aspect-square max-w-md mx-auto">
+        {/* The robot + season goals */}
+        <section className="mb-24">
+          <SectionHeading
+            eyebrow="The Build"
+            title="Shock Blue"
+            subtitle="One robot, four season-long goals it had to satisfy."
+          />
+          <div className="grid lg:grid-cols-5 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <div className="aspect-square max-w-sm mx-auto lg:max-w-none">
                 <img
-                  src="/images/robot.jpg" //add new robot or 3d model here
-                  alt="Competition Robot - Final Design"
+                  src="/images/shock_blue.png"
+                  alt="Shock Blue - our 2025-2026 competition robot"
                   className="w-full h-full object-cover rounded-[20px]"
                 />
               </div>
             </div>
-
-            {/* Goal Cards in Mobile Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Users className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">Community</h3>
-                  </div>
-                  <p className="text-white/80 font-sans"> 
-                    Maximize our community impact with our robotics.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <FileText className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">Documentation</h3>
-                  </div>
-                  <p className="text-white/80 font-sans">
-                  Document the engineering process of our robot with CAD.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Cpu className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">Optimization</h3>
-                  </div>
-                  <p className="text-white/80 font-sans">
-                  Optimize our robot’s autonomous routines.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Cog className="w-6 h-6 text-cyan-400" />
-                    <h3 className="text-lg font-bold text-white font-sans">Reliability</h3>
-                  </div>
-                  <p className="text-white/80 font-sans">
-                  Improve robot reliability throughout the season.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4">
+              {seasonGoals.map((goal) => (
+                <Card key={goal.title} className="bg-white/10 backdrop-blur-sm border-white/20">
+                  <CardContent className="p-5">
+                    <div className="flex items-center gap-3 mb-2">
+                      <goal.icon className="w-5 h-5 text-cyan-400" />
+                      <h3 className="text-base font-bold text-white font-sans">{goal.title}</h3>
+                    </div>
+                    <p className="text-white/70 font-sans text-sm">{goal.text}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </div>
-
-          {/* Desktop Layout */}
-          <div className="hidden lg:grid grid-cols-3 gap-6">
-            {/* Top Row - Two Goals */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Users className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">Community</h3>
-                </div>
-                <p className="text-white/80 font-sans">
-                  Maximize our community impact with our robotics.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <FileText className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">Documentation</h3>
-                </div>
-                <p className="text-white/80 font-sans">
-                Document the engineering process of our robot with CAD.
-                </p>
-              </CardContent>
-            </Card>
-
-            <div className="row-span-2 flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-6 font-sans">Competition Robot</h3>
-              <div className="flex-grow">
-                <div className="aspect-square">
-                  <img
-                    src="/images/robot.jpg"
-                    alt="Competition Robot - Final Design"
-                    className="w-full h-full object-cover rounded-[20px]"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Cpu className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">Optimization</h3>
-                </div>
-                <p className="text-white/80 font-sans">
-                 Optimize our robot’s autonomous routines.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Cog className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-lg font-bold text-white font-sans">Reliability</h3>
-                </div>
-                <p className="text-white/80 font-sans">
-                  Improve robot reliability throughout the season.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Robot Features</h2>
+        {/* Robot features */}
+        <section className="mb-24">
+          <SectionHeading
+            eyebrow="Engineering"
+            title="What Makes It Fast"
+            subtitle="Six subsystems we designed, printed, or over-built ourselves."
+          />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Zap className="w-12 h-12 text-yellow-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Strongest FTC-Legal Servos</h3>
-                <p className="text-cyan-400 text-lg font-bold">6V Servo Power Hub</p>
-                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                6V servo power hub, instead of 4.8V control hubs used by other teams
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <CableCar className="w-12 h-12 text-cyan-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Compact Slide System</h3>
-                <p className="text-cyan-400 text-lg font-bold">200lb Kevlar Strings</p>
-                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                High-torque, hyper-compact aluminum pullies and kevlar strings
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <LifeBuoy className="w-12 h-12 text-green-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">MEGA-NUM Wheels</h3>
-                <p className="text-cyan-400 text-lg font-bold">64% Weight Decrease</p>
-                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Aluminum 3D-printed wheels, custom-made in Fusion 360
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <SquareArrowUpIcon className="w-12 h-12 text-purple-400 mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Instant Intake System</h3>
-                <p className="text-cyan-400 text-lg font-bold">0.17s per Artifact</p>
-                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Rubber band roller with custom nylon spools, powered by a 1150 RPM motor
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <Flower className="w-12 h-12 text-orange-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Compact Extension Pulleys</h3>
-                <p className="text-cyan-400 text-lg font-bold">Smallest Extension Pulleys Ever</p>
-                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                The world's smallest extension pulleys; extremely strong with low volume
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="group h-60 bg-white/10 hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm border-white/20 text-center">
-              <CardContent className="p-6 py-1 h-full flex flex-col items-center justify-evenly">
-                <CircleGauge className="w-12 h-12 text-blue-400 mx-auto mb-4 transition-transform duration-300 group-hover:scale-90" />
-                <h3 className="text-lg font-bold text-white font-sans">Tele-Op Auto Controls</h3>
-                <p className="text-cyan-400 text-lg font-bold">3/3 Primary Functions</p>
-                <p className="text-white/70 mb-0 font-sans text-sm overflow-hidden max-h-0 opacity-0 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-300">
-                Automatic aiming, automatic shooting, and automatic intake, to assist the driver
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-        {/*i might make this a table, since in the portfolio the meets are a bunch of different timelines based on what part was being worked on -vishwa*/}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Development Timeline</h2>
-          <div className="space-y-6">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 0 - Foundation</h3>
-                  <Badge variant="outline" className="border-cyan-400/50 text-cyan-300">
-                    Early Season
-                  </Badge>
-                </div>
-                <ul className="space-y-2 text-white/80 font-sans ml-9">
-                  <li>• Slow intake time (2.37sec)</li>
-                  <li>• Limitation: Only fit 1 artifact, no preloading artifacts</li>
-                  <li>• Dual-roller design</li>
-                  <li>• Problem: Intake system frequently broke down</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 1-2 - Midseason Innovation</h3>
-                  <Badge variant="outline" className="border-orange-400/50 text-orange-300">
-                    Mid-Season
-                  </Badge>
-                </div>
-                <ul className="space-y-2 text-white/80 font-sans ml-9">
-                <li>• Near-instant intake time (0.17sec)</li>
-                <li>• Could store up to 3 artifacts</li>
-                <li>• Limitation: Slow servo</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-xl font-bold text-white font-sans">Meet 3-ILT - Competitive Peak</h3>
-                  <Badge variant="outline" className="border-green-400/50 text-green-300">
-                    Peak Performance
-                  </Badge>
-                </div>
-                <ul className="space-y-2 text-white/80 font-sans ml-9">
-                <li>• Near-instant intake time (0.17sec)</li>
-                <li>• Short, wide flap intake → no jamming</li>
-                <li>• Could store up to 3 artifacts, with preloading</li>
-                <li>• Fast servo for quick intake speeds</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {robotFeatures.map((feature) => (
+              <Card
+                key={feature.title}
+                className="bg-white/10 hover:bg-white/[0.16] transition-colors duration-300 backdrop-blur-sm border-white/20"
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <feature.icon className={`w-8 h-8 ${feature.color}`} />
+                    <span className="text-2xl font-bold text-cyan-400 font-sans leading-none">{feature.stat}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white font-sans mb-2">{feature.title}</h3>
+                  <p className="text-white/70 font-sans text-sm">{feature.text}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Technical Innovations</h2>
-          <div className="grid lg:grid-cols-2 gap-12 mb-8">
+        {/* Timeline */}
+        <section className="mb-24">
+          <SectionHeading
+            eyebrow="Iteration"
+            title="Intake, Meet by Meet"
+            subtitle="The intake was our bottleneck all season. Here's how it got 14x faster."
+          />
+          <div className="relative pl-8 md:pl-10">
+            <div className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-white/20" />
+            <div className="space-y-6">
+              {timeline.map((stage) => (
+                <div key={stage.meet} className="relative">
+                  <div
+                    className={`absolute -left-8 md:-left-10 top-6 w-4 h-4 rounded-full ${stage.dot} ring-4 ring-black`}
+                  />
+                  <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                    <CardContent className="p-6">
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        <h3 className="text-xl font-bold text-white font-sans">{stage.meet}</h3>
+                        <Badge variant="outline" className={stage.accent}>
+                          {stage.phase}
+                        </Badge>
+                        <span className="ml-auto inline-flex items-center gap-2 text-cyan-400 font-sans font-bold">
+                          <Timer className="w-4 h-4" />
+                          {stage.metric}
+                        </span>
+                      </div>
+                      <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+                        <ul className="space-y-2 text-white/80 font-sans text-sm">
+                          {stage.wins.map((win) => (
+                            <li key={win} className="flex items-start gap-2">
+                              <span className="text-green-400 leading-5">+</span>
+                              {win}
+                            </li>
+                          ))}
+                        </ul>
+                        <ul className="space-y-2 text-white/60 font-sans text-sm">
+                          {stage.limits.map((limit) => (
+                            <li key={limit} className="flex items-start gap-2">
+                              <span className="text-orange-400 leading-5">–</span>
+                              {limit}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Software */}
+        <section className="mb-24">
+          <SectionHeading
+            eyebrow="Software"
+            title="Aiming Without the Driver"
+            subtitle="Sensor fusion, a tuned turret loop, and an autonomous routine built on top of both."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-10">
             <div className="flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-6 font-sans">Autonomous Development</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <Crosshair className="w-6 h-6 text-cyan-400" />
+                <h3 className="text-xl font-bold text-white font-sans">Turret Tracking</h3>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {turretTracking.map((item) => (
+                  <Card key={item.title} className="bg-white/10 backdrop-blur-sm border-white/20">
+                    <CardContent className="p-5">
+                      <h4 className="text-cyan-400 font-bold font-sans text-sm mb-2">{item.title}</h4>
+                      <p className="text-white/75 font-sans text-sm">{item.text}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col">
+              <h3 className="text-xl font-bold text-white mb-4 font-sans">Autonomous Development</h3>
               <div className="flex-grow">
-                <div className="aspect-video">
+                <div className="h-5/6 w-5/6">
                   <img
-                    src="/images/auton.png"
-                    alt="60-Point Autonomous Development"
+                    src="/images/2026_auton.png"
+                    alt="Autonomous routine development"
                     className="w-full h-full object-cover rounded-[20px]"
                   />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-6 font-sans">Sensors</h3>
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 flex-grow">
-                <CardContent className="p-6 h-full flex flex-col justify-center">
-                  <div className="space-y-3 text-white/80 font-sans">
-                    <p><strong className="text-cyan-400">Limelight:</strong> April Tag Detection</p>
-                    <p><strong className="text-cyan-400">Logitech C920:</strong> Color Blobs</p>
-                    <p><strong className="text-cyan-400">Color:</strong> Artifact Transfer</p>
-                    <p><strong className="text-cyan-400">Proximity:</strong> Robot Pose</p>
-                    <p><strong className="text-cyan-400">Encoders:</strong> Flywheel Velocity & Turret Position</p>
-                   
-                  </div>
+          </div>
+
+          <div className="flex items-center gap-3 mb-4">
+            <Radar className="w-6 h-6 text-cyan-400" />
+            <h3 className="text-xl font-bold text-white font-sans">Sensor Suite</h3>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {sensors.map((sensor) => (
+              <Card key={sensor.name} className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-5">
+                  <h4 className="text-cyan-400 font-bold font-sans text-sm mb-2">{sensor.name}</h4>
+                  <p className="text-white/75 font-sans text-sm">{sensor.use}</p>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-1 gap-8">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-4 font-sans">Turret Tracking</h3>
-                <div className="space-y-3 text-white/80 font-sans">
-                  <p><strong className="text-cyan-400">Kinematic Turret Tracking:</strong>Ensure the turret is facing the depot </p>
-                  <p><strong className="text-cyan-400">Limelight Turret Tracking:</strong>Give us accurate tracking not affected by drift</p>
-                  <p><strong className="text-cyan-400"> Camera tracking PIDF:</strong>Ensure exact precision </p>
-                  <p><strong className="text-cyan-400"> Dual Tracking:</strong>If the robot velocity fall under 5 in /sec then the tracking will switch to limelight, otherwise it will always be kinematic.</p>
-                </div>
-              </CardContent>
-            </Card>
+            ))}
           </div>
         </section>
 
+        {/* Results */}
         <section>
-          <h2 className="text-3xl font-bold text-white mb-8 font-sans">Season Results</h2>
+          <SectionHeading eyebrow="Results" title="Season Results" />
           <Card className="bg-white/10 backdrop-blur-sm border-white/20">
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-3 gap-8 text-center"> 
-                <div>
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">1st</div>
-                  <p className="text-white/80 font-sans">Control Award Placement</p>
-                </div> 
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex items-center gap-5">
+                  <Trophy className="w-14 h-14 text-yellow-400 flex-shrink-0" />
+                  <div>
+                    <div className="text-4xl font-bold text-cyan-400 font-sans">1st</div>
+                    <p className="text-white font-sans font-semibold">Control Award Placement</p>
+                  </div>
+                </div>
+                <p className="text-white/75 font-sans md:border-l md:border-white/15 md:pl-8">
+                  Recognized for the work above — dual kinematic and Limelight turret tracking, a five-sensor pose and
+                  transfer suite, and tele-op automation covering all three of the robot's primary functions.
+                </p>
               </div>
-              
             </CardContent>
           </Card>
         </section>
