@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Script from "next/script"
+import { useEffect, useState } from "react"
 import {
   ArrowRight,
   Boxes,
@@ -196,6 +198,20 @@ function SectionHeading({
 }
 
 export default function Season2026Page() {
+
+  const [showContent, setShowContent] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  
+    useEffect(() => {
+      setMounted(true)
+      const timer = setTimeout(() => {
+        setShowContent(true)
+      }, 300)
+  
+      return () => clearTimeout(timer)
+    }, [])
+  
+
   return (
     <div className="min-h-screen bg-black pt-24 pb-16">
       <div
@@ -274,11 +290,38 @@ export default function Season2026Page() {
           <div className="grid lg:grid-cols-5 gap-8 items-start">
             <div className="lg:col-span-2">
               <div className="aspect-square max-w-sm mx-auto lg:max-w-none">
+                
+                {/* Image Code - No Longer in Use:
                 <img
                   src="/images/shock_blue.png"
                   alt="Shock Blue - our 2025-2026 competition robot"
                   className="w-full h-full object-cover rounded-[20px]"
                 />
+                */}
+
+                { /*3d model*/ }
+                <Script
+                type="module"
+                src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+                strategy="afterInteractive"
+                />
+                {mounted && (
+                // @ts-ignore - model-viewer is a custom web component
+                <model-viewer
+                src="/models/robot.glb"
+                alt="3D model of the robot"
+                camera-controls
+                touch-action="pan-y"
+                auto-rotate
+                auto-rotate-delay="0"
+                rotation-per-second="20deg"
+                interaction-prompt="none"
+                
+                exposure="0.7"
+                shadow-intensity="1"
+                style={{ width: "100%", height: "480px", backgroundColor: "transparent" }}
+                />
+                )}
               </div>
             </div>
             <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4">

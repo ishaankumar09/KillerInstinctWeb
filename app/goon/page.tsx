@@ -5,8 +5,10 @@ import Script from "next/script"
 
 export default function GoonPage() {
   const [showContent, setShowContent] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const timer = setTimeout(() => {
       setShowContent(true)
     }, 300)
@@ -65,13 +67,32 @@ export default function GoonPage() {
               }`}
             >
               {/* @ts-ignore - model-viewer is a custom web component */}
-              <iframe 
+              {/* <iframe 
               src="https://gmail4350007.autodesk360.com/shares/public/SH28cd1QT2badd0ea72bf93564321f383f5c?mode=embed"
               width="640" 
               height="480" 
               allowFullScreen={true}
               frameBorder="0">
-              </iframe>
+              </iframe> */}
+              
+              {mounted && (
+                // @ts-ignore - model-viewer is a custom web component
+                <model-viewer
+                src="/images/robot-optimized.glb"
+                alt="3D model of the robot"
+                camera-controls
+                touch-action="pan-y"
+                auto-rotate
+                auto-rotate-delay="0"
+                rotation-per-second="20deg"
+                interaction-prompt="none"
+                exposure="1"
+                shadow-intensity="1"
+                style={{ width: "100%", height: "480px", backgroundColor: "transparent" }}
+                />
+              )}
+              
+
             </div>
           </section>
         </div>
